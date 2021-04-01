@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:supergreat/features/pages/homepage/views/homepage.dart';
+import 'package:supergreat/features/pages/profile_page/views/profile_page.dart';
 import 'package:supergreat/theme/colors.dart';
 
 void main() => runApp(SuperGreat());
