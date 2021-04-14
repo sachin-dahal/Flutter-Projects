@@ -30,7 +30,7 @@ class _KidDetailspageState extends State<KidDetailspage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  SizedBox(height: 25.0),
+                  SizedBox(height: 45.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

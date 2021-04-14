@@ -27,7 +27,7 @@ class _SoundLibraryState extends State<SoundLibrary> {
             child: Container(
               child: Column(
                 children: [
-                  SizedBox(height: 25.0),
+                  SizedBox(height: 45.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -81,30 +81,35 @@ class _SoundLibraryState extends State<SoundLibrary> {
                   ),
                   SizedBox(height: 25.0),
                   _buildCircleTabIndicatorPanel(),
-                  SizedBox(height: 15.0),
-                  Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: Divider(thickness: 2, color: Colors.brown[200])),
-                  SizedBox(height: 15.0),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Image(image: AssetImage("images/sub.png"), height: 4.0),
-                        Image(
-                            image: AssetImage("images/play_pause.png"),
-                            height: 25.0),
-                        Image(
-                            image: AssetImage("images/add.png"), height: 25.0),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 30.0),
+                  SizedBox(height: 10.0),
                 ],
               ),
             ),
           ),
+        ),
+        bottomNavigationBar: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            SizedBox(height: 5.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Divider(thickness: 2, color: Colors.brown[200]),
+            ),
+            SizedBox(height: 15.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image(image: AssetImage("images/sub.png"), height: 4.0),
+                  Image(
+                      image: AssetImage("images/play_pause.png"), height: 25.0),
+                  Image(image: AssetImage("images/add.png"), height: 25.0),
+                ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+          ],
         ),
       ),
     );
