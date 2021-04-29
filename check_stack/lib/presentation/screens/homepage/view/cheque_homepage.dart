@@ -15,6 +15,7 @@ class ChequePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       key: _key,
       endDrawer: MainDrawer(),
       body: SingleChildScrollView(

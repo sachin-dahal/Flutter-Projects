@@ -1,19 +1,14 @@
-import 'package:check_stack/common/kBottomBarButton.dart';
 import 'package:check_stack/presentation/screens/homepage/controller/homepage_controller.dart';
-import 'package:check_stack/presentation/screens/homepage/view/successful_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:check_stack/utility/styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../utility/colors.dart';
 import '../../../common_widgets/drawer_widget.dart';
 
-class ConfirmPage extends StatelessWidget {
-  final HomepageController _homepageController = Get.find();
-
+class HistoryDetailsPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
 
   @override
@@ -157,11 +152,28 @@ class ConfirmPage extends StatelessWidget {
       ),
       bottomNavigationBar:
           GetBuilder<HomepageController>(builder: (_homepageController) {
-        return KBottomBarButton(
-          text: "Go",
-          isEnabled: _homepageController.isEnabled,
-          onPressed: () => Get.to(SuccessfulPage()),
-          // onPressed: () => Get.to(TimingPage()),
+        return GestureDetector(
+          onTap: () => Get.back(),
+          child: Container(
+            height: 70.0,
+            color: kPrimaryColor,
+            padding: EdgeInsets.symmetric(horizontal: 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "< Back",
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      fontSize: 15.0,
+                      color: kBgColor1,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
         );
       }),
     );
@@ -238,12 +250,8 @@ class ConfirmPage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            icon: Icon(FeatherIcons.arrowLeft),
-            onPressed: () => Get.back(),
-          ),
           Text(
-            'CONFIRM',
+            '08:32 PM - 20 NOV, 2021',
             style: kBarTextStyle,
           ),
           TextButton(

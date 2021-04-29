@@ -1,6 +1,8 @@
 import 'dart:math' as math;
 
+import 'package:check_stack/common/kWhiteTextfield.dart';
 import 'package:check_stack/presentation/common_widgets/drawer_tile_widget.dart';
+import 'package:check_stack/presentation/screens/history/view/history_page.dart';
 import 'package:check_stack/presentation/screens/signup/view/signup_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -24,6 +26,7 @@ class _MainDrawerState extends State<MainDrawer> {
     return Container(
       width: 290.0,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         body: Drawer(
           child: ListView(
             padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
@@ -38,14 +41,21 @@ class _MainDrawerState extends State<MainDrawer> {
               SizedBox(height: 30.0),
               DrawerTile(
                 title: "Change Password",
-                onPressed: () {},
+                onPressed: () {
+                  Get.bottomSheet(
+                    _buildChangePasswordSheet(),
+                  );
+                },
                 color: Colors.red,
                 icon: Icons.security,
               ),
               SizedBox(height: 15.0),
               DrawerTile(
                 title: "History",
-                onPressed: () {},
+                onPressed: () {
+                  Get.back();
+                  Get.to(HistoryPage());
+                },
                 color: Colors.black,
                 icon: Icons.history,
               ),
@@ -201,6 +211,107 @@ class _MainDrawerState extends State<MainDrawer> {
                 letterSpacing: 0.4,
               ),
             )),
+      ],
+    );
+  }
+}
+
+class _buildChangePasswordSheet extends StatelessWidget {
+  const _buildChangePasswordSheet({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
+          height: 300.0,
+          color: Colors.grey[300],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "CHANGE PASSWORD",
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            fontSize: 14.0, fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Text(
+                      "Fill up the credentials",
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                          fontSize: 12.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 12.0),
+                    KWhiteTextField(hintText: "Old Password"),
+                    SizedBox(height: 12.0),
+                    KWhiteTextField(hintText: "New Password"),
+                    SizedBox(height: 12.0),
+                    KWhiteTextField(hintText: "Confirm Password"),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10),
+              Divider(
+                color: kPrimaryColor,
+                height: 1,
+              ),
+              IntrinsicHeight(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(width: 20.0),
+                    Expanded(
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () => Get.back(),
+                          child: Text(
+                            "Cancel",
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: kTextColor1,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Expanded(child: VerticalDivider(color: kPrimaryColor)),
+                    Expanded(
+                      child: Center(
+                        child: TextButton(
+                          onPressed: () => Get.back(),
+                          child: Text(
+                            "Save",
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color: kTextColor1,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 20.0),
+                  ],
+                ),
+              )
+            ],
+          ),
+        ),
       ],
     );
   }
