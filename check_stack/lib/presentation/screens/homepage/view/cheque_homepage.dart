@@ -112,7 +112,7 @@ class ChequePage extends StatelessWidget {
             ],
           ),
           TextButton(
-            onPressed: _key.currentState.openEndDrawer,
+            onPressed: () => _key.currentState.openEndDrawer(),
             child: Container(
               height: 20,
               child: Image(

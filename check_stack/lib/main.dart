@@ -14,6 +14,7 @@ class CheckStack extends StatelessWidget {
       theme: ThemeData(
         primaryColor: kPrimaryColor,
         scaffoldBackgroundColor: kBgColor2,
+        canvasColor: Colors.grey[200],
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: kPrimaryColor,
         ),
