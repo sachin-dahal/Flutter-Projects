@@ -1,5 +1,6 @@
 import 'package:check_stack/common/kBottomBarButton.dart';
 import 'package:check_stack/presentation/screens/homepage/controller/homepage_controller.dart';
+import 'package:check_stack/presentation/screens/homepage/view/confirm_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:check_stack/utility/styles.dart';
 import 'package:flutter/material.dart';
@@ -105,7 +106,7 @@ class AmountPage extends StatelessWidget {
         return KBottomBarButton(
           text: "Next",
           isEnabled: _homepageController.isEnabled,
-          onPressed: () {},
+          onPressed: () => Get.to(ConfirmPage()),
           // onPressed: () => Get.to(TimingPage()),
         );
       }),
