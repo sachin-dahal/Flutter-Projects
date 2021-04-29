@@ -7,12 +7,16 @@ class KTextField extends StatelessWidget {
   final String hintText;
   final bool obscure;
   final Widget suffixIcon;
+  final Function onChanged;
+  final TextInputType keyboardType;
 
   KTextField({
     this.controller,
     @required this.hintText,
     this.obscure = false,
     this.suffixIcon,
+    this.onChanged,
+    this.keyboardType,
   });
 
   @override
@@ -23,15 +27,15 @@ class KTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: GoogleFonts.poppins(textStyle: TextStyle(fontSize: 13.0)),
-        contentPadding: EdgeInsets.symmetric(
-          vertical: 10.0,
-        ),
+        contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         focusedBorder:
             UnderlineInputBorder(borderSide: BorderSide(color: kPrimaryColor)),
         isDense: true,
         suffixIcon: suffixIcon,
       ),
       obscureText: obscure,
+      onChanged: onChanged ?? (val) {},
+      keyboardType: keyboardType,
     );
   }
 }

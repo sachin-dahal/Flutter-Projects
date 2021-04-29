@@ -1,5 +1,6 @@
 import 'package:check_stack/common/kBottomBarButton.dart';
 import 'package:check_stack/presentation/common_widgets/drawer_widget.dart';
+import 'package:check_stack/presentation/screens/homepage/controller/homepage_controller.dart';
 import 'package:check_stack/presentation/screens/homepage/view/timing_homepage.dart';
 import 'package:check_stack/presentation/screens/homepage/widgets/cheque_image_widget.dart';
 import 'package:check_stack/utility/colors.dart';
@@ -8,6 +9,8 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ChequePage extends StatelessWidget {
+  final HomepageController _homepageController = Get.put(HomepageController());
+
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {

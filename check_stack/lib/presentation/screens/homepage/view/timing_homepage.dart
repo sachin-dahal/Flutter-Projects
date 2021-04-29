@@ -1,4 +1,5 @@
 import 'package:check_stack/common/kBottomBarButton.dart';
+import 'package:check_stack/presentation/screens/homepage/view/account_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:check_stack/utility/styles.dart';
 import 'package:flutter/material.dart';
@@ -6,10 +7,16 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../common_widgets/drawer_widget.dart';
+
 class TimingPage extends StatelessWidget {
+  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
+      endDrawer: MainDrawer(),
       body: Column(
         children: [
           _buildTopNavPanel(),
@@ -162,7 +169,7 @@ class TimingPage extends StatelessWidget {
       ),
       bottomNavigationBar: KBottomBarButton(
         text: "Next",
-        onPressed: () {},
+        onPressed: () => Get.to(AccountPage()),
         // onPressed: () => Get.to(TimingPage()),
       ),
     );
@@ -186,7 +193,7 @@ class TimingPage extends StatelessWidget {
             style: kBarTextStyle,
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () => _key.currentState.openEndDrawer(),
             child: Container(
               height: 20,
               child: Image(
