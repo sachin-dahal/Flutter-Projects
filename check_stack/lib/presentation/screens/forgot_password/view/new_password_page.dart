@@ -1,6 +1,7 @@
 import 'package:check_stack/common/kBottomBarButton.dart';
 import 'package:check_stack/common/kTextfield.dart';
-import 'package:check_stack/presentation/screens/forgot_password/view/forgot_password_page.dart';
+import 'package:check_stack/presentation/screens/forgot_password/view/check_email_page.dart';
+import 'package:check_stack/presentation/screens/signin/controller/signin_controller.dart';
 import 'package:check_stack/presentation/screens/signup/view/signup_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:flutter/material.dart';
@@ -8,11 +9,7 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../controller/signin_controller.dart';
-
-class SigninPage extends StatelessWidget {
-  final SignInController _signInController = Get.put(SignInController());
-
+class NewPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,25 +21,20 @@ class SigninPage extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  IconButton(
+                    icon: Icon(Icons.arrow_back),
+                    onPressed: () => Get.back(),
+                  ),
+                  SizedBox(width: 50.0),
                   Container(
-                      width: 150.0,
-                      child: Image(image: AssetImage("images/checkstack.png"))),
-                  TextButton(
-                    onPressed: () => Get.to(SignupPage()),
-                    child: Text(
-                      "Sign up",
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          fontSize: 15.0,
-                          color: kPrimaryColor,
-                          fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.underline,
-                        ),
-                      ),
+                    width: 150.0,
+                    child: Image(
+                      image: AssetImage("images/checkstack.png"),
                     ),
                   ),
+                  SizedBox(width: 10.0),
                 ],
               ),
               SizedBox(height: 80),
@@ -52,7 +44,7 @@ class SigninPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Welcome back!\nYou've been missed",
+                      "New password",
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
                           fontSize: 24.0,
@@ -60,12 +52,21 @@ class SigninPage extends StatelessWidget {
                         ),
                       ),
                     ),
+                    SizedBox(height: 10.0),
+                    Text(
+                      "Lets change your old password and set you\nup with a brand new one.",
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                          fontSize: 12.0,
+                          color: kTextColor2,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
                     SizedBox(height: 20),
-                    KTextField(hintText: "Enter email address"),
-                    SizedBox(height: 10),
                     GetBuilder<SignInController>(builder: (_signInController) {
                       return KTextField(
-                        hintText: "Enter password",
+                        hintText: "Enter new password",
                         obscure: _signInController.isObscure,
                         suffixIcon: IconButton(
                           onPressed: _signInController.toggle,
@@ -77,22 +78,7 @@ class SigninPage extends StatelessWidget {
                         ),
                       );
                     }),
-                    SizedBox(height: Get.height * 0.22),
-                    Center(
-                      child: TextButton(
-                        onPressed: () => Get.to(ForgotPasswordPage()),
-                        child: Text(
-                          "Forgot Password",
-                          style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                color: kTextColor1,
-                                fontSize: 12.0,
-                                fontWeight: FontWeight.w600,
-                                decoration: TextDecoration.underline),
-                          ),
-                        ),
-                      ),
-                    ),
+                    SizedBox(height: 20),
                   ],
                 ),
               )
@@ -101,8 +87,8 @@ class SigninPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: KBottomBarButton(
-        text: "Sign In",
-        onPressed: () {},
+        text: "Update password",
+        onPressed: () => Get.to(SignupPage()),
       ),
     );
   }

@@ -1,10 +1,12 @@
 import 'dart:math' as math;
 
 import 'package:check_stack/presentation/common_widgets/drawer_tile_widget.dart';
+import 'package:check_stack/presentation/screens/signup/view/signup_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../utility/colors.dart';
@@ -79,7 +81,7 @@ class _MainDrawerState extends State<MainDrawer> {
           ),
         ),
         bottomNavigationBar: GestureDetector(
-          onTap: () {},
+          onTap: () => Get.to(SignupPage()),
           child: Container(
             height: 70.0,
             color: kPrimaryColor,
