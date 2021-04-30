@@ -20,7 +20,7 @@ class ConfirmPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      endDrawer: MainDrawer(),
+      drawer: MainDrawer(),
       body: ScrollConfiguration(
         behavior: ScrollBehavior()
           ..buildViewportChrome(context, null, AxisDirection.down),
@@ -247,7 +247,7 @@ class ConfirmPage extends StatelessWidget {
             style: kBarTextStyle,
           ),
           TextButton(
-            onPressed: () => _key.currentState.openEndDrawer(),
+            onPressed: () => _key.currentState.openDrawer(),
             child: Container(
               height: 20,
               child: Image(

@@ -17,7 +17,7 @@ class ChequePage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       key: _key,
-      endDrawer: MainDrawer(),
+      drawer: MainDrawer(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -116,7 +116,7 @@ class ChequePage extends StatelessWidget {
             ],
           ),
           TextButton(
-            onPressed: () => _key.currentState.openEndDrawer(),
+            onPressed: () => _key.currentState.openDrawer(),
             child: Container(
               height: 20,
               child: Image(

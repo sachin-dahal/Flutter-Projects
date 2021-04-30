@@ -69,11 +69,10 @@ class SigninPage extends StatelessWidget {
                         obscure: _signInController.isObscure,
                         suffixIcon: IconButton(
                           onPressed: _signInController.toggle,
+                          iconSize: 16.0,
                           icon: _signInController.isObscure
-                              ? Icon(FeatherIcons.eyeOff,
-                                  color: kTextColor2, size: 18)
-                              : Icon(FeatherIcons.eye,
-                                  color: kTextColor2, size: 18),
+                              ? Icon(FeatherIcons.eyeOff, color: kTextColor2)
+                              : Icon(FeatherIcons.eye, color: kTextColor2),
                         ),
                       );
                     }),

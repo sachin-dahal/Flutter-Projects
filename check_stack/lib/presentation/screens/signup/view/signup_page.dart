@@ -86,11 +86,11 @@ class _SignupPageState extends State<SignupPage> {
                       obscure: _obscure,
                       suffixIcon: IconButton(
                         onPressed: _toggle,
+                        padding: EdgeInsets.zero,
+                        iconSize: 16.0,
                         icon: _obscure
-                            ? Icon(FeatherIcons.eyeOff,
-                                color: kTextColor2, size: 18)
-                            : Icon(FeatherIcons.eye,
-                                color: kTextColor2, size: 18),
+                            ? Icon(FeatherIcons.eyeOff, color: kTextColor2)
+                            : Icon(FeatherIcons.eye, color: kTextColor2),
                       ),
                     ),
                     SizedBox(

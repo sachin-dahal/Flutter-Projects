@@ -25,14 +25,15 @@ class KTextField extends StatelessWidget {
       controller: controller,
       style: GoogleFonts.poppins(textStyle: TextStyle(fontSize: 14.0)),
       decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: GoogleFonts.poppins(textStyle: TextStyle(fontSize: 13.0)),
-        contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-        focusedBorder:
-            UnderlineInputBorder(borderSide: BorderSide(color: kPrimaryColor)),
-        isDense: true,
-        suffixIcon: suffixIcon,
-      ),
+          hintText: hintText,
+          hintStyle: GoogleFonts.poppins(textStyle: TextStyle(fontSize: 13.0)),
+          contentPadding:
+              EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+          focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: kPrimaryColor)),
+          isDense: true,
+          suffixIcon: suffixIcon,
+          suffixIconConstraints: BoxConstraints.tightFor(height: 20.0)),
       obscureText: obscure,
       onChanged: onChanged ?? (val) {},
       keyboardType: keyboardType,

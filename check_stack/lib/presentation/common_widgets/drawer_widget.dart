@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:check_stack/common/kWhiteTextfield.dart';
 import 'package:check_stack/presentation/common_widgets/drawer_tile_widget.dart';
 import 'package:check_stack/presentation/screens/history/view/history_page.dart';
+import 'package:check_stack/presentation/screens/profile/view/profile_page.dart';
 import 'package:check_stack/presentation/screens/signup/view/signup_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,7 +36,10 @@ class _MainDrawerState extends State<MainDrawer> {
             children: [
               SizedBox(height: 25.0),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Get.back();
+                  Get.to(ProfilePage());
+                },
                 child: _buildTopProfilePanel(),
               ),
               SizedBox(height: 30.0),
@@ -93,19 +97,19 @@ class _MainDrawerState extends State<MainDrawer> {
         bottomNavigationBar: GestureDetector(
           onTap: () => Get.to(SignupPage()),
           child: Container(
-            height: 70.0,
+            height: 65.0,
             color: kPrimaryColor,
             padding: EdgeInsets.symmetric(horizontal: 20.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Transform.rotate(
-                    angle: 180 * math.pi / 180,
-                    child: Icon(
-                      FeatherIcons.logOut,
-                      color: kBgColor1,
-                      size: 22.0,
-                    )),
+                // Transform.rotate(
+                //     angle: 180 * math.pi / 180,
+                //     child: Icon(
+                //       FeatherIcons.logOut,
+                //       color: kBgColor1,
+                //       size: 22.0,
+                //     )),
                 SizedBox(width: 20.0),
                 Text(
                   "Log Out",
@@ -117,6 +121,11 @@ class _MainDrawerState extends State<MainDrawer> {
                     ),
                   ),
                 ),
+                Icon(
+                  FeatherIcons.logOut,
+                  color: kBgColor1,
+                  size: 22.0,
+                )
               ],
             ),
           ),
@@ -214,16 +223,10 @@ class _MainDrawerState extends State<MainDrawer> {
       ],
     );
   }
-}
 
-class _buildChangePasswordSheet extends StatelessWidget {
-  const _buildChangePasswordSheet({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildChangePasswordSheet() {
     return ListView(
+      padding: EdgeInsets.zero,
       children: [
         Container(
           margin: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
@@ -305,7 +308,6 @@ class _buildChangePasswordSheet extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(width: 20.0),
                   ],
                 ),
               )

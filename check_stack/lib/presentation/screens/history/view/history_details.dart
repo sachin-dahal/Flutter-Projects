@@ -15,7 +15,7 @@ class HistoryDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      endDrawer: MainDrawer(),
+      drawer: MainDrawer(),
       body: ScrollConfiguration(
         behavior: ScrollBehavior()
           ..buildViewportChrome(context, null, AxisDirection.down),
@@ -255,7 +255,7 @@ class HistoryDetailsPage extends StatelessWidget {
             style: kBarTextStyle,
           ),
           TextButton(
-            onPressed: () => _key.currentState.openEndDrawer(),
+            onPressed: () => _key.currentState.openDrawer(),
             child: Container(
               height: 20,
               child: Image(

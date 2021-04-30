@@ -21,7 +21,7 @@ class AmountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      endDrawer: MainDrawer(),
+      drawer: MainDrawer(),
       body: ScrollConfiguration(
         behavior: ScrollBehavior()
           ..buildViewportChrome(context, null, AxisDirection.down),
@@ -63,33 +63,55 @@ class AmountPage extends StatelessWidget {
                                   color: Colors.black54,
                                 ))),
                             child: Center(
-                                child: Text(
-                              "\$",
-                              style: GoogleFonts.poppins(
-                                textStyle: TextStyle(
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18.0,
+                              child: Text(
+                                "\$",
+                                style: GoogleFonts.poppins(
+                                  textStyle: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 18.0,
+                                  ),
                                 ),
                               ),
-                            )),
+                            ),
                           ),
                           SizedBox(width: 20.0),
                           Flexible(
-                              child: Container(
-                                  height: 40.0,
-                                  decoration: BoxDecoration(
-                                      color: kBgColor2,
-                                      border: Border(
-                                          bottom: BorderSide(
-                                        color: Colors.black54,
-                                      ))),
-                                  child: KTextField(
-                                    hintText: " Enter Amount",
-                                    controller:
-                                        _homepageController.amountController,
-                                    onChanged: _homepageController.onChg,
-                                    keyboardType: TextInputType.number,
-                                  )))
+                            child: Container(
+                              height: 40.0,
+                              decoration: BoxDecoration(
+                                  color: kBgColor2,
+                                  border: Border(
+                                      bottom: BorderSide(
+                                    color: Colors.black54,
+                                  ))),
+                              child: TextField(
+                                style: GoogleFonts.poppins(
+                                    textStyle: TextStyle(
+                                  fontSize: 14.0,
+                                  fontWeight: FontWeight.w700,
+                                )),
+                                controller:
+                                    _homepageController.amountController,
+                                onChanged: _homepageController.onChg,
+                                keyboardType: TextInputType.number,
+                                decoration: InputDecoration(
+                                  hintText: "Enter Amount",
+                                  hintStyle: GoogleFonts.poppins(
+                                      textStyle: TextStyle(fontSize: 13.0)),
+                                  contentPadding: EdgeInsets.symmetric(
+                                      vertical: 10.0, horizontal: 10.0),
+                                  enabled: true,
+                                  enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.transparent)),
+                                  focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                          color: Colors.transparent)),
+                                  isDense: true,
+                                ),
+                              ),
+                            ),
+                          )
                         ],
                       ),
                     ),
@@ -156,7 +178,7 @@ class AmountPage extends StatelessWidget {
             style: kBarTextStyle,
           ),
           TextButton(
-            onPressed: () => _key.currentState.openEndDrawer(),
+            onPressed: () => _key.currentState.openDrawer(),
             child: Container(
               height: 20,
               child: Image(

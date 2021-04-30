@@ -19,7 +19,7 @@ class SuccessfulPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      endDrawer: MainDrawer(),
+      drawer: MainDrawer(),
       body: ScrollConfiguration(
         behavior: ScrollBehavior()
           ..buildViewportChrome(context, null, AxisDirection.down),
