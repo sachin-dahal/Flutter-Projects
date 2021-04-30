@@ -1,4 +1,4 @@
-import 'package:check_stack/presentation/screens/signup/view/signup_page.dart';
+import 'package:check_stack/presentation/screens/splash_screen/view/splash_screen.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
@@ -22,7 +22,7 @@ class CheckStack extends StatelessWidget {
           color: kPrimaryColor,
         ),
       ),
-      home: SignupPage(),
+      home: SplashPage(),
     );
   }
 }
