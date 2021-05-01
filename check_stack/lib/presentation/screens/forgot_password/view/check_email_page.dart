@@ -25,7 +25,7 @@ class CheckEmailPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                        width: 150.0,
+                        width: 120.0,
                         child:
                             Image(image: AssetImage("images/checkstack.png"))),
                     TextButton(

@@ -78,7 +78,10 @@ class TimingPage extends StatelessWidget {
                               ))),
                         ],
                       ),
-                      Image(image: AssetImage("images/tick_done.png"))
+                      Container(
+                          height: 40.0,
+                          child:
+                              Image(image: AssetImage("images/tick_done.png")))
                     ],
                   ),
                 ),
@@ -151,7 +154,10 @@ class TimingPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Image(image: AssetImage("images/tick_notdone.png"))
+                      Container(
+                          height: 40.0,
+                          child: Image(
+                              image: AssetImage("images/tick_not_done.png")))
                     ],
                   ),
                 ),

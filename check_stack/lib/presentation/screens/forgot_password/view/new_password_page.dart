@@ -1,6 +1,5 @@
 import 'package:check_stack/common/kBottomBarButton.dart';
 import 'package:check_stack/common/kTextfield.dart';
-import 'package:check_stack/presentation/screens/forgot_password/view/check_email_page.dart';
 import 'package:check_stack/presentation/screens/signin/controller/signin_controller.dart';
 import 'package:check_stack/presentation/screens/signup/view/signup_page.dart';
 import 'package:check_stack/utility/colors.dart';
@@ -29,7 +28,7 @@ class NewPasswordPage extends StatelessWidget {
                   ),
                   SizedBox(width: 50.0),
                   Container(
-                    width: 150.0,
+                    width: 120.0,
                     child: Image(
                       image: AssetImage("images/checkstack.png"),
                     ),

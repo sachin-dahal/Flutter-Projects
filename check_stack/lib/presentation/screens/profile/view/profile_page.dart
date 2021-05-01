@@ -11,7 +11,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../utility/colors.dart';
-import '../../../../utility/colors.dart';
 import '../../../common_widgets/drawer_widget.dart';
 
 class ProfilePage extends StatelessWidget {

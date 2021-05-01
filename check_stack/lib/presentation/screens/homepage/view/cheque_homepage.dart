@@ -18,33 +18,38 @@ class ChequePage extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       key: _key,
       drawer: MainDrawer(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            _buildTopNavPanel(),
-            SizedBox(height: 15.0),
-            Text("Snap a picture of your Cheque", style: GoogleFonts.poppins()),
-            SizedBox(height: 15.0),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10.0),
-              child: Column(
-                children: [
-                  ChequeImage(
-                    text: "Front Side",
-                    imgUrl: "images/cheque_front.png",
-                    imgName: "Front Side.jpeg",
-                  ),
-                  SizedBox(height: 20.0),
-                  ChequeImage(
-                    text: "Back Side",
-                    imgUrl: "images/cheque_back.png",
-                    imgName: "Back Side.jpeg",
-                  ),
-                  SizedBox(height: 20.0),
-                ],
-              ),
-            )
-          ],
+      body: ScrollConfiguration(
+        behavior: ScrollBehavior()
+          ..buildViewportChrome(context, null, AxisDirection.down),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _buildTopNavPanel(),
+              SizedBox(height: 15.0),
+              Text("Snap a picture of your Cheque",
+                  style: GoogleFonts.poppins()),
+              SizedBox(height: 15.0),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Column(
+                  children: [
+                    ChequeImage(
+                      text: "Front Side",
+                      imgUrl: "images/cheque_front.png",
+                      imgName: "Front Side.jpeg",
+                    ),
+                    SizedBox(height: 20.0),
+                    ChequeImage(
+                      text: "Back Side",
+                      imgUrl: "images/cheque_back.png",
+                      imgName: "Back Side.jpeg",
+                    ),
+                    SizedBox(height: 20.0),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: KBottomBarButton(

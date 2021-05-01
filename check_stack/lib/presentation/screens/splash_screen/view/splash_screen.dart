@@ -1,6 +1,4 @@
 import 'package:check_stack/common/kBottomBarButton.dart';
-import 'package:check_stack/common/kTextfield.dart';
-import 'package:check_stack/presentation/screens/homepage/view/cheque_homepage.dart';
 import 'package:check_stack/presentation/screens/signin/view/signin_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:check_stack/utility/styles.dart';
@@ -26,7 +24,7 @@ class SplashPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                        width: 150.0,
+                        width: 120.0,
                         child:
                             Image(image: AssetImage("images/checkstack.png"))),
                     TextButton(

@@ -81,7 +81,11 @@ class _ChequeImageState extends State<ChequeImage> {
                             children: [
                               Row(
                                 children: [
-                                  Image(image: AssetImage("images/image.png")),
+                                  Container(
+                                      height: 20.0,
+                                      child: Image(
+                                          image:
+                                              AssetImage("images/image.png"))),
                                   SizedBox(width: 10.0),
                                   Text(widget.imgName,
                                       style: GoogleFonts.poppins())

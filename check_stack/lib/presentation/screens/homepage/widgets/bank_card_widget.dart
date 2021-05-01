@@ -28,7 +28,7 @@ class BankCard extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.centerLeft,
-                height: 20.0,
+                height: 14.0,
                 child: Image(
                   image: AssetImage(cardImgUrl),
                   fit: BoxFit.contain,
@@ -58,7 +58,10 @@ class BankCard extends StatelessWidget {
                   ))),
             ],
           ),
-          Image(image: AssetImage(imgUrl ?? "images/tick_notdone.png"))
+          Container(
+              height: 40.0,
+              child: Image(
+                  image: AssetImage(imgUrl ?? "images/tick_not_done.png")))
         ],
       ),
     );

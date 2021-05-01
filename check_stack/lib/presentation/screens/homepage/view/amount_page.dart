@@ -8,7 +8,6 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../../common/kTextfield.dart';
 import '../../../../utility/colors.dart';
 import '../../../common_widgets/drawer_widget.dart';
 

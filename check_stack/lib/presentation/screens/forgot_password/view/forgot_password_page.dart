@@ -1,10 +1,8 @@
 import 'package:check_stack/common/kBottomBarButton.dart';
 import 'package:check_stack/common/kTextfield.dart';
 import 'package:check_stack/presentation/screens/forgot_password/view/check_email_page.dart';
-import 'package:check_stack/presentation/screens/signup/view/signup_page.dart';
 import 'package:check_stack/utility/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -28,7 +26,7 @@ class ForgotPasswordPage extends StatelessWidget {
                   ),
                   SizedBox(width: 50.0),
                   Container(
-                    width: 150.0,
+                    width: 120.0,
                     child: Image(
                       image: AssetImage("images/checkstack.png"),
                     ),

@@ -31,14 +31,14 @@ class ProfilecardWidget extends StatelessWidget {
             children: [
               Container(
                 alignment: Alignment.centerLeft,
-                height: 20.0,
+                height: 16.0,
                 child: Image(
                   image: AssetImage(imgUrl),
                   fit: BoxFit.contain,
                 ),
               ),
               Container(
-                height: 18.0,
+                height: 20.0,
                 child: Image(
                   image: AssetImage("images/delete.png"),
                   fit: BoxFit.cover,
@@ -46,7 +46,7 @@ class ProfilecardWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 15.0),
+          SizedBox(height: 12.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
