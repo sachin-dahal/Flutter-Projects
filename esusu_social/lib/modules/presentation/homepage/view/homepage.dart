@@ -5,7 +5,7 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text("Homepage"),
+        child: Center(child: Text("Homepage")),
       ),
     );
   }

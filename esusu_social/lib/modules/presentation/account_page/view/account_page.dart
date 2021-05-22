@@ -1,6 +1,9 @@
 import 'package:esusu_social/common/kAppBar.dart';
 import 'package:esusu_social/common/styles.dart';
 import 'package:esusu_social/modules/presentation/account_page/widgets/acc_button_widget.dart';
+import 'package:esusu_social/modules/presentation/bvn_verification/view/bvn_verification_page.dart';
+import 'package:esusu_social/modules/presentation/invite_friends/view/invite_friends_page.dart';
+import 'package:esusu_social/modules/presentation/notifications/view/notifications_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,7 +41,7 @@ class AccountPage extends StatelessWidget {
                   ),
                   AccButton(
                     text: "Notifications",
-                    onPressed: () {},
+                    onPressed: () => Get.to(NotificationsPage()),
                   ),
                   AccButton(
                     text: "Privacy & Security",
@@ -50,11 +53,11 @@ class AccountPage extends StatelessWidget {
                   ),
                   AccButton(
                     text: "Invite Friends",
-                    onPressed: () {},
+                    onPressed: () => Get.to(InviteFriendsPage()),
                   ),
                   AccButton(
                     text: "Link BVN",
-                    onPressed: () {},
+                    onPressed: () => Get.to(BVNVerificationPage()),
                   ),
                   AccButton(
                     text: "Contact Us",

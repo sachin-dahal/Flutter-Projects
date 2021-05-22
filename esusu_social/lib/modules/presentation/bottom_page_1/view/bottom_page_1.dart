@@ -5,7 +5,7 @@ class BottomPage1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text("Bottom Page 1"),
+        child: Center(child: Text("Bottom Page 1")),
       ),
     );
   }

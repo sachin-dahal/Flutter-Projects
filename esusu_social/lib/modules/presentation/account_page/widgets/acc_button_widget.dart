@@ -16,7 +16,7 @@ class AccButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onPressed,
       child: Container(
         margin: EdgeInsets.only(bottom: 20.0),
         height: 50.0,
