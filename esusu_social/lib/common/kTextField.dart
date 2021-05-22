@@ -5,16 +5,19 @@ import 'package:google_fonts/google_fonts.dart';
 class KTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
+  final bool obscure;
 
   KTextField({
     this.controller,
     @required this.hintText,
+    this.obscure = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      obscureText: obscure,
       style: GoogleFonts.inter(textStyle: TextStyle(color: kTextColor1)),
       decoration: InputDecoration(
         hintText: hintText,

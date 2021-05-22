@@ -1,14 +1,13 @@
 import 'package:esusu_social/common/kTextField.dart';
 import 'package:esusu_social/common/styles.dart';
-import 'package:esusu_social/modules/presentation/login/view/forgot_password_page.dart';
-import 'package:esusu_social/modules/presentation/signup/view/signup_page.dart';
+import 'package:esusu_social/modules/presentation/login/view/otp_verify_page.dart';
 import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
+class SetNewPasswordPage extends StatelessWidget {
   final double height = Get.height;
   final double width = Get.width;
 
@@ -23,14 +22,7 @@ class LoginPage extends StatelessWidget {
             children: [
               SizedBox(height: height * 0.06),
               Container(
-                width: width,
-                child: Image(
-                  image: AssetImage("images/esusu_social.png"),
-                  height: 55.0,
-                ),
-              ),
-              Container(
-                height: height * 0.46,
+                height: height * 0.7,
                 width: width,
                 child: Image(
                   image: AssetImage("images/house.png"),
@@ -59,33 +51,22 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 30.0),
-                  Text("Login", style: kAuthTitleTextStyle),
-                  SizedBox(height: 30.0),
-                  KTextField(hintText: "Email..."),
+                  SizedBox(height: 40.0),
+                  Text("Set New Password", style: kAuthTitleTextStyle),
+                  SizedBox(height: 10.0),
+                  Text(
+                    "Enter the new password you would to\nuse and try login",
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: kTextColor1,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.w500)),
+                  ),
+                  SizedBox(height: 20.0),
+                  KTextField(hintText: "Password...", obscure: true),
+                  SizedBox(height: 20.0),
+                  KTextField(hintText: "Confirm Password...", obscure: true),
                   SizedBox(height: 25.0),
-                  KTextField(hintText: "Password..."),
-                  SizedBox(height: 50.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: () => Get.to(ForgotPasswordPage()),
-                        child: Text(
-                          "Forgot Password?",
-                          style: kLinkLabelStyle,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => Get.to(SignUpPage()),
-                        child: Text(
-                          "Sign Up",
-                          style: kAuthTitleTextStyle.copyWith(fontSize: 18.0),
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
@@ -94,7 +75,7 @@ class LoginPage extends StatelessWidget {
             bottom: height * 0.40,
             right: 50.0,
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () => Get.to(OTPVerifyPage()),
               child: Icon(FeatherIcons.arrowRight),
             ),
           ),

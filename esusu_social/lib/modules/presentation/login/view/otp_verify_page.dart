@@ -1,16 +1,22 @@
 import 'package:esusu_social/common/kTextField.dart';
 import 'package:esusu_social/common/styles.dart';
-import 'package:esusu_social/modules/presentation/login/view/forgot_password_page.dart';
-import 'package:esusu_social/modules/presentation/signup/view/signup_page.dart';
 import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pinput/pin_put/pin_put.dart';
 
-class LoginPage extends StatelessWidget {
+class OTPVerifyPage extends StatelessWidget {
   final double height = Get.height;
   final double width = Get.width;
+
+  BoxDecoration get _pinPutDecoration {
+    return BoxDecoration(
+      border: Border.all(color: kPrimaryColor),
+      borderRadius: BorderRadius.circular(15.0),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +29,7 @@ class LoginPage extends StatelessWidget {
             children: [
               SizedBox(height: height * 0.06),
               Container(
-                width: width,
-                child: Image(
-                  image: AssetImage("images/esusu_social.png"),
-                  height: 55.0,
-                ),
-              ),
-              Container(
-                height: height * 0.46,
+                height: height * 0.7,
                 width: width,
                 child: Image(
                   image: AssetImage("images/house.png"),
@@ -59,33 +58,20 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 30.0),
-                  Text("Login", style: kAuthTitleTextStyle),
-                  SizedBox(height: 30.0),
-                  KTextField(hintText: "Email..."),
+                  SizedBox(height: 40.0),
+                  Text("Enter OTP", style: kAuthTitleTextStyle),
+                  SizedBox(height: 10.0),
+                  Text(
+                    "Enter the pin code you received by text msg",
+                    style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: kTextColor1,
+                            fontSize: 13.0,
+                            fontWeight: FontWeight.w500)),
+                  ),
+                  SizedBox(height: 20.0),
+                  _buildOTPPanel(),
                   SizedBox(height: 25.0),
-                  KTextField(hintText: "Password..."),
-                  SizedBox(height: 50.0),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: () => Get.to(ForgotPasswordPage()),
-                        child: Text(
-                          "Forgot Password?",
-                          style: kLinkLabelStyle,
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => Get.to(SignUpPage()),
-                        child: Text(
-                          "Sign Up",
-                          style: kAuthTitleTextStyle.copyWith(fontSize: 18.0),
-                        ),
-                      ),
-                    ],
-                  )
                 ],
               ),
             ),
@@ -99,6 +85,29 @@ class LoginPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildOTPPanel() {
+    return Container(
+      margin: const EdgeInsets.all(5.0),
+      padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
+      child: PinPut(
+        keyboardType: TextInputType.text,
+        fieldsCount: 5,
+        eachFieldConstraints: BoxConstraints(minHeight: 50.0, minWidth: 35.0),
+        onSubmit: (String pin) {},
+        submittedFieldDecoration: _pinPutDecoration.copyWith(
+          borderRadius: BorderRadius.circular(20.0),
+        ),
+        selectedFieldDecoration: _pinPutDecoration,
+        followingFieldDecoration: _pinPutDecoration.copyWith(
+          borderRadius: BorderRadius.circular(5.0),
+          border: Border.all(
+            color: kPrimaryColor,
+          ),
+        ),
       ),
     );
   }
