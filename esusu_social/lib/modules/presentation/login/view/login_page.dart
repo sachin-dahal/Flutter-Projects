@@ -1,7 +1,9 @@
 import 'package:esusu_social/common/kTextField.dart';
 import 'package:esusu_social/common/styles.dart';
+import 'package:esusu_social/modules/presentation/bottom_bar/view/bottom_bar_page.dart';
 import 'package:esusu_social/modules/presentation/login/view/forgot_password_page.dart';
 import 'package:esusu_social/modules/presentation/signup/view/signup_page.dart';
+import 'package:esusu_social/modules/presentation/wallet/view/wallet_page.dart';
 import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
@@ -94,7 +96,7 @@ class LoginPage extends StatelessWidget {
             bottom: height * 0.40,
             right: 50.0,
             child: FloatingActionButton(
-              onPressed: () {},
+              onPressed: () => Get.offAll(BottomBarPage()),
               child: Icon(FeatherIcons.arrowRight),
             ),
           ),

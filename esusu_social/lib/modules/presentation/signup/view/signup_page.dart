@@ -47,26 +47,29 @@ class SignUpPage extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30.0),
                       topRight: Radius.circular(30.0))),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+              child: ListView(
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                padding: EdgeInsets.zero,
+                shrinkWrap: true,
+                physics: BouncingScrollPhysics(),
                 children: [
                   SizedBox(height: 20.0),
                   Text("Sign Up", style: kAuthTitleTextStyle),
                   SizedBox(height: 15.0),
                   KTextField(hintText: "First Name..."),
-                  SizedBox(height: 25.0),
+                  SizedBox(height: 20.0),
                   KTextField(hintText: "Last Name..."),
-                  SizedBox(height: 25.0),
+                  SizedBox(height: 20.0),
                   KTextField(hintText: "Phone Number..."),
-                  SizedBox(height: 25.0),
+                  SizedBox(height: 20.0),
                   KTextField(hintText: "Email..."),
-                  SizedBox(height: 25.0),
+                  SizedBox(height: 20.0),
                   KTextField(hintText: "Password..."),
                   SizedBox(height: 20.0),
                   KTextField(hintText: "Confirm Password..."),
                   SizedBox(height: 20.0),
                   KTextField(hintText: "Referrer Code..."),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 15.0),
                   GestureDetector(
                     onTap: () => Get.off(LoginPage()),
                     child: Row(
@@ -87,7 +90,8 @@ class SignUpPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                  )
+                  ),
+                  SizedBox(height: 30.0),
                 ],
               ),
             ),

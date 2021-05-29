@@ -12,3 +12,7 @@ final TextStyle kLabelStyle = GoogleFonts.poppins(
 final TextStyle kLinkLabelStyle = GoogleFonts.poppins(
     textStyle: TextStyle(
         fontSize: 12.0, fontWeight: FontWeight.w600, color: kPrimaryColor));
+
+final TextStyle kBigLabelStyle = GoogleFonts.poppins(
+    textStyle: TextStyle(
+        fontSize: 15.0, fontWeight: FontWeight.w400, color: kPrimaryColor));

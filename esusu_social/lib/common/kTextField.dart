@@ -6,11 +6,13 @@ class KTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final bool obscure;
+  final bool isBgColor;
 
   KTextField({
     this.controller,
     @required this.hintText,
     this.obscure = false,
+    this.isBgColor = false,
   });
 
   @override
@@ -18,18 +20,24 @@ class KTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscure,
-      style: GoogleFonts.inter(textStyle: TextStyle(color: kTextColor1)),
+      style: GoogleFonts.poppins(
+          textStyle: TextStyle(
+              color: isBgColor ? kTextColor3 : kTextColor1,
+              fontWeight: FontWeight.w500)),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: GoogleFonts.inter(
+        hintStyle: GoogleFonts.poppins(
             textStyle: TextStyle(
-                color: kTextColor1.withOpacity(0.5),
-                fontSize: 16.0,
+                color: isBgColor
+                    ? kTextColor3.withOpacity(0.5)
+                    : kTextColor1.withOpacity(0.5),
+                fontSize: 15.0,
                 fontWeight: FontWeight.w500)),
         isDense: true,
         focusedBorder: UnderlineInputBorder(
-            borderSide:
-                BorderSide(color: kPrimaryColor.withOpacity(0.7), width: 2.0)),
+            borderSide: BorderSide(
+                color: isBgColor ? kTextColor3 : kPrimaryColor.withOpacity(0.7),
+                width: 2.0)),
         enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.grey[400], width: 1.5)),
       ),

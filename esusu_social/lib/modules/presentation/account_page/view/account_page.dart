@@ -1,9 +1,14 @@
 import 'package:esusu_social/common/kAppBar.dart';
 import 'package:esusu_social/common/styles.dart';
 import 'package:esusu_social/modules/presentation/account_page/widgets/acc_button_widget.dart';
+import 'package:esusu_social/modules/presentation/bank_details/view/bank_details.dart';
 import 'package:esusu_social/modules/presentation/bvn_verification/view/bvn_verification_page.dart';
 import 'package:esusu_social/modules/presentation/invite_friends/view/invite_friends_page.dart';
 import 'package:esusu_social/modules/presentation/notifications/view/notifications_page.dart';
+import 'package:esusu_social/modules/presentation/personal_details/view/personal_details.dart';
+import 'package:esusu_social/modules/presentation/privacy_and_security/view/privacy_and_security.dart';
+import 'package:esusu_social/modules/presentation/terms_and_conditions/view/terms_and_conditions.dart';
+import 'package:esusu_social/modules/presentation/wallet/view/wallet_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -29,15 +34,21 @@ class AccountPage extends StatelessWidget {
                   SizedBox(height: 20.0),
                   AccButton(
                     text: "Personal Details",
-                    onPressed: () {},
+                    onPressed: () => Get.to(PersonalDetailsPage()),
                   ),
+                  //TODO: just for navigation v
+                  AccButton(
+                    text: "Wallet",
+                    onPressed: () => Get.to(WalletPage()),
+                  ),
+                  //TODO: just for navigation ^
                   AccButton(
                     text: "Upgrade Account",
                     onPressed: () {},
                   ),
                   AccButton(
                     text: "Bank Details",
-                    onPressed: () {},
+                    onPressed: () => Get.to(BankDetailsPage()),
                   ),
                   AccButton(
                     text: "Notifications",
@@ -45,11 +56,11 @@ class AccountPage extends StatelessWidget {
                   ),
                   AccButton(
                     text: "Privacy & Security",
-                    onPressed: () {},
+                    onPressed: () => Get.to(PrivacyAndSecurityPage()),
                   ),
                   AccButton(
                     text: "Legal",
-                    onPressed: () {},
+                    onPressed: () => Get.to(TermsAndConditionsPage()),
                   ),
                   AccButton(
                     text: "Invite Friends",
