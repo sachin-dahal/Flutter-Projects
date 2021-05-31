@@ -8,7 +8,6 @@ import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class LoginPage extends StatelessWidget {
   final double height = Get.height;
@@ -27,12 +26,12 @@ class LoginPage extends StatelessWidget {
               Container(
                 width: width,
                 child: Image(
-                  image: AssetImage("images/esusu_social.png"),
+                  image: AssetImage("images/esusu_main.png"),
                   height: 55.0,
                 ),
               ),
               Container(
-                height: height * 0.46,
+                height: Get.height > 700 ? height * 0.55 : height * 0.46,
                 width: width,
                 child: Image(
                   image: AssetImage("images/house.png"),
