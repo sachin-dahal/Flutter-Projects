@@ -7,12 +7,20 @@ class KTextField extends StatelessWidget {
   final String hintText;
   final bool obscure;
   final bool isBgColor;
+  final Widget prefix;
+  final Widget suffix;
+  final EdgeInsets contentPadding;
+  final bool readOnly;
 
   KTextField({
     this.controller,
     @required this.hintText,
     this.obscure = false,
     this.isBgColor = false,
+    this.prefix,
+    this.suffix,
+    this.contentPadding,
+    this.readOnly = false,
   });
 
   @override
@@ -20,11 +28,17 @@ class KTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       obscureText: obscure,
+      readOnly: readOnly,
+      enabled: !readOnly,
       style: GoogleFonts.poppins(
           textStyle: TextStyle(
               color: isBgColor ? kTextColor3 : kTextColor1,
               fontWeight: FontWeight.w500)),
       decoration: InputDecoration(
+        prefixIcon: prefix,
+        prefixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0),
+        suffixIcon: suffix,
+        suffixIconConstraints: BoxConstraints(minWidth: 0, minHeight: 0),
         hintText: hintText,
         hintStyle: GoogleFonts.poppins(
             textStyle: TextStyle(
@@ -34,6 +48,7 @@ class KTextField extends StatelessWidget {
                 fontSize: 15.0,
                 fontWeight: FontWeight.w500)),
         isDense: true,
+        contentPadding: contentPadding ?? EdgeInsets.fromLTRB(12, 8, 12, 8),
         focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(
                 color: isBgColor ? kTextColor3 : kPrimaryColor.withOpacity(0.7),

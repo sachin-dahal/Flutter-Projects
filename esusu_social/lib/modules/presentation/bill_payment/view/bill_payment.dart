@@ -2,6 +2,7 @@ import 'package:esusu_social/common/kAppBar.dart';
 import 'package:esusu_social/modules/presentation/bill_payment/controller/bill_payment_controller.dart';
 import 'package:esusu_social/modules/presentation/bill_payment/view/bill_payment_details.dart';
 import 'package:esusu_social/modules/presentation/bill_payment/widgets/bill_card.dart';
+import 'package:esusu_social/modules/presentation/data/view/data_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,11 +36,7 @@ class BillPaymentPage extends StatelessWidget {
                   BillCard(
                     imgUrl: "images/data.png",
                     text: "Data",
-                    onPressed: () => Get.to(
-                      BillPaymentDetailsPage(
-                        title: "Data",
-                      ),
-                    ),
+                    onPressed: () => Get.to(DataPage()),
                   ),
                   BillCard(
                     imgUrl: "images/internet.png",

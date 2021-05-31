@@ -15,8 +15,8 @@ class ESusuSocial extends StatelessWidget {
       theme: ThemeData(
           primaryColor: kPrimaryColor,
           scaffoldBackgroundColor: kBackgroundColor1),
-      // home: LoginPage(),
-      home: BottomBarPage(),
+      home: LoginPage(),
+      // home: BottomBarPage(),
     );
   }
 }

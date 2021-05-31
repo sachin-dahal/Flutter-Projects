@@ -23,6 +23,7 @@ class LabelCardWidget extends StatelessWidget {
       child: Container(
         height: 125.0,
         width: 105.0,
+        padding: EdgeInsets.symmetric(horizontal: 10.0),
         decoration: BoxDecoration(
             color: color, borderRadius: BorderRadius.circular(15.0)),
         child: Center(
@@ -39,6 +40,7 @@ class LabelCardWidget extends StatelessWidget {
               SizedBox(height: 15.0),
               Text(
                 text,
+                textAlign: TextAlign.center,
                 style: kBigLabelStyle.copyWith(
                   color: Colors.white,
                   fontSize: fontSize,
