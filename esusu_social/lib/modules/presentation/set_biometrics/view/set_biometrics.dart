@@ -9,6 +9,7 @@ class SetBiometricsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [

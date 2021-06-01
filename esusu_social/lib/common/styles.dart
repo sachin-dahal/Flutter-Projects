@@ -7,7 +7,9 @@ final TextStyle kAuthTitleTextStyle = GoogleFonts.poppins(
 
 final TextStyle kLabelStyle = GoogleFonts.poppins(
     textStyle: TextStyle(
-        color: kTextColor1, fontSize: 16.0, fontWeight: FontWeight.w500));
+        color: isDarkModeON ? kTextColor3 : kTextColor1,
+        fontSize: 16.0,
+        fontWeight: FontWeight.w500));
 
 final TextStyle kLinkLabelStyle = GoogleFonts.poppins(
     textStyle: TextStyle(

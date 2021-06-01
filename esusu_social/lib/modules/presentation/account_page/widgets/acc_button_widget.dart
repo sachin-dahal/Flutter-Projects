@@ -23,7 +23,7 @@ class AccButton extends StatelessWidget {
         width: width - 40.0,
         padding: EdgeInsets.only(left: 20.0, right: 10.0),
         decoration: BoxDecoration(
-          color: kTextColor3,
+          color: isDarkModeON ? kPrimaryColor : kTextColor3,
           borderRadius: BorderRadius.circular(12.0),
           boxShadow: [
             BoxShadow(
@@ -40,14 +40,14 @@ class AccButton extends StatelessWidget {
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
                     fontWeight: FontWeight.w600,
-                    color: kTextColor1,
+                    color: isDarkModeON ? kTextColor3 : kTextColor1,
                     fontSize: 16.0),
               ),
             ),
             Icon(
               FeatherIcons.chevronRight,
               size: 28.0,
-              color: kPrimaryColor,
+              color: isDarkModeON ? kTextColor3 : kPrimaryColor,
             )
           ],
         ),

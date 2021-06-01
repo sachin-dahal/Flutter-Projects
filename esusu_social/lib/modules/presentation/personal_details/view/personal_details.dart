@@ -16,6 +16,7 @@ class PersonalDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -26,24 +27,39 @@ class PersonalDetailsPage extends StatelessWidget {
                 children: [
                   _buildCenterImage(),
                   SizedBox(height: 10.0),
-                  Text("FULL NAME", style: kLinkLabelStyle),
+                  Text("FULL NAME",
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   SizedBox(height: 5.0),
                   KTextField(
+                      isBgColor: isDarkModeON,
                       hintText: "",
                       controller: _personalDetailsController.nameController),
                   SizedBox(height: 25.0),
-                  Text("DATE OF BIRTH", style: kLinkLabelStyle),
+                  Text("DATE OF BIRTH",
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   SizedBox(height: 5.0),
                   KTextField(
+                      isBgColor: isDarkModeON,
                       hintText: "",
                       controller: _personalDetailsController.dobController),
                   SizedBox(height: 25.0),
-                  Text("GENDER", style: kLinkLabelStyle),
+                  Text("GENDER",
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   _buildDropDown(),
                   SizedBox(height: 25.0),
-                  Text("EMAIL", style: kLinkLabelStyle),
+                  Text("EMAIL",
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   SizedBox(height: 5.0),
                   KTextField(
+                      isBgColor: isDarkModeON,
                       hintText: "",
                       controller: _personalDetailsController.emailController),
                   SizedBox(height: 50.0),
@@ -60,7 +76,7 @@ class PersonalDetailsPage extends StatelessWidget {
   Widget _buildDropDown() {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFFF0F2F4),
+        color: isDarkModeON ? kDarkBackgroundColor : Color(0xFFF0F2F4),
         borderRadius: BorderRadius.circular(5.0),
       ),
       child: GetBuilder<PersonalDetailsController>(
@@ -72,9 +88,10 @@ class PersonalDetailsPage extends StatelessWidget {
             thickness: 1.5,
             height: 0.0,
           ),
-          focusColor: Color(0xFFF0F2F4),
+          focusColor: isDarkModeON ? kDarkBackgroundColor : Color(0xFFF0F2F4),
           value: _personalDetailsController.selectedItem,
           icon: Icon(FeatherIcons.chevronDown),
+          dropdownColor: isDarkModeON ? kDarkBackgroundColor : kTextColor3,
           items: _personalDetailsController.genderList.map((String value) {
             return DropdownMenuItem<String>(
               value: value,
@@ -82,7 +99,8 @@ class PersonalDetailsPage extends StatelessWidget {
                 value,
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
-                        color: kTextColor1, fontWeight: FontWeight.w500)),
+                        color: isDarkModeON ? kTextColor3 : kTextColor1,
+                        fontWeight: FontWeight.w500)),
               ),
             );
           }).toList(),

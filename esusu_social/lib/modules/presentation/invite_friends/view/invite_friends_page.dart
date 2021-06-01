@@ -14,6 +14,7 @@ class InviteFriendsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Stack(
           children: [
@@ -31,7 +32,9 @@ class InviteFriendsPage extends StatelessWidget {
                       height: height * 0.45,
                       width: width * 0.8,
                       decoration: BoxDecoration(
-                        color: kTextColor3,
+                        color: isDarkModeON
+                            ? kPrimaryColor.withOpacity(0.6)
+                            : kTextColor3,
                         borderRadius: BorderRadius.circular(10.0),
                         boxShadow: [
                           BoxShadow(
@@ -54,14 +57,17 @@ class InviteFriendsPage extends StatelessWidget {
                           SizedBox(height: 20.0),
                           Padding(
                             padding: EdgeInsets.symmetric(horizontal: 20.0),
-                            child: KTextField(hintText: "Email..."),
+                            child: KTextField(
+                                isBgColor: isDarkModeON, hintText: "Email..."),
                           )
                         ],
                       ),
                     ),
                     SizedBox(height: 50.0),
                     Text("Share",
-                        style: kAuthTitleTextStyle.copyWith(fontSize: 20.0)),
+                        style: kAuthTitleTextStyle.copyWith(
+                            fontSize: 20.0,
+                            color: isDarkModeON ? kTextColor3 : kTextColor1)),
                     SizedBox(height: 10.0),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,

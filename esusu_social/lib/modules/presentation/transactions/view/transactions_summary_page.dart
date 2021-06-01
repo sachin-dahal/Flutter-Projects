@@ -10,6 +10,7 @@ class TransactionsSummaryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -27,7 +28,7 @@ class TransactionsSummaryPage extends StatelessWidget {
                         icon: Icon(
                           FeatherIcons.x,
                           size: 30.0,
-                          color: kPrimaryColor,
+                          color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
                         ),
                         onPressed: () => Get.back()),
                   ),
@@ -43,7 +44,9 @@ class TransactionsSummaryPage extends StatelessWidget {
                               textStyle: TextStyle(
                                   fontSize: 23.0,
                                   fontWeight: FontWeight.w700,
-                                  color: kTextColor1)),
+                                  color: isDarkModeON
+                                      ? kTextColor3
+                                      : kTextColor1)),
                         ),
                         SizedBox(height: 20.0),
                         _buildAmountDatePanel(),
@@ -77,9 +80,10 @@ class TransactionsSummaryPage extends StatelessWidget {
           "New Balance",
           style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                  fontSize: 13.0,
-                  fontWeight: FontWeight.w600,
-                  color: kPrimaryColor)),
+            fontSize: 13.0,
+            fontWeight: FontWeight.w600,
+            color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+          )),
         ),
         Text(
           "123,456 INR",
@@ -87,7 +91,7 @@ class TransactionsSummaryPage extends StatelessWidget {
               textStyle: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
-                  color: kTextColor1)),
+                  color: isDarkModeON ? kTextColor3 : kTextColor1)),
         ),
       ],
     );
@@ -102,9 +106,10 @@ class TransactionsSummaryPage extends StatelessWidget {
           "Note",
           style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                  fontSize: 13.0,
-                  fontWeight: FontWeight.w600,
-                  color: kPrimaryColor)),
+            fontSize: 13.0,
+            fontWeight: FontWeight.w600,
+            color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+          )),
         ),
         Text(
           "Top Up",
@@ -112,7 +117,7 @@ class TransactionsSummaryPage extends StatelessWidget {
               textStyle: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
-                  color: kTextColor1)),
+                  color: isDarkModeON ? kTextColor3 : kTextColor1)),
         ),
       ],
     );
@@ -127,9 +132,10 @@ class TransactionsSummaryPage extends StatelessWidget {
           "Source Bank",
           style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                  fontSize: 13.0,
-                  fontWeight: FontWeight.w600,
-                  color: kPrimaryColor)),
+            fontSize: 13.0,
+            fontWeight: FontWeight.w600,
+            color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+          )),
         ),
         Text(
           "Wema Bank PIc",
@@ -137,7 +143,7 @@ class TransactionsSummaryPage extends StatelessWidget {
               textStyle: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
-                  color: kTextColor1)),
+                  color: isDarkModeON ? kTextColor3 : kTextColor1)),
         ),
         Text(
           "Daniel Aleoghenna Ozeh",
@@ -145,7 +151,7 @@ class TransactionsSummaryPage extends StatelessWidget {
               textStyle: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
-                  color: kTextColor1)),
+                  color: isDarkModeON ? kTextColor3 : kTextColor1)),
         ),
         Text(
           "*******1388",
@@ -153,7 +159,7 @@ class TransactionsSummaryPage extends StatelessWidget {
               textStyle: TextStyle(
                   fontSize: 16.0,
                   fontWeight: FontWeight.w600,
-                  color: kTextColor1)),
+                  color: isDarkModeON ? kTextColor3 : kTextColor1)),
         ),
       ],
     );
@@ -172,9 +178,10 @@ class TransactionsSummaryPage extends StatelessWidget {
               "Status",
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      fontSize: 13.0,
-                      fontWeight: FontWeight.w600,
-                      color: kPrimaryColor)),
+                fontSize: 13.0,
+                fontWeight: FontWeight.w600,
+                color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+              )),
             ),
             Text(
               "Success",
@@ -182,7 +189,7 @@ class TransactionsSummaryPage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: kTextColor1)),
+                      color: isDarkModeON ? kTextColor3 : kTextColor1)),
             ),
           ],
         ),
@@ -194,9 +201,10 @@ class TransactionsSummaryPage extends StatelessWidget {
               "Reference",
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      fontSize: 13.0,
-                      fontWeight: FontWeight.w600,
-                      color: kPrimaryColor)),
+                fontSize: 13.0,
+                fontWeight: FontWeight.w600,
+                color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+              )),
             ),
             Text(
               "MNFYI44I",
@@ -204,7 +212,7 @@ class TransactionsSummaryPage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: kTextColor1)),
+                      color: isDarkModeON ? kTextColor3 : kTextColor1)),
             ),
             Text(
               "20210518182248",
@@ -212,7 +220,7 @@ class TransactionsSummaryPage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: kTextColor1)),
+                      color: isDarkModeON ? kTextColor3 : kTextColor1)),
             ),
             Text(
               "012314",
@@ -220,7 +228,7 @@ class TransactionsSummaryPage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: kTextColor1)),
+                      color: isDarkModeON ? kTextColor3 : kTextColor1)),
             ),
           ],
         ),
@@ -240,9 +248,10 @@ class TransactionsSummaryPage extends StatelessWidget {
               "Amount",
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      fontSize: 13.0,
-                      fontWeight: FontWeight.w600,
-                      color: kPrimaryColor)),
+                fontSize: 13.0,
+                fontWeight: FontWeight.w600,
+                color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+              )),
             ),
             Text(
               "10,000 INR",
@@ -250,7 +259,7 @@ class TransactionsSummaryPage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: kTextColor1)),
+                      color: isDarkModeON ? kTextColor3 : kTextColor1)),
             ),
           ],
         ),
@@ -262,9 +271,10 @@ class TransactionsSummaryPage extends StatelessWidget {
               "Date",
               style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      fontSize: 13.0,
-                      fontWeight: FontWeight.w600,
-                      color: kPrimaryColor)),
+                fontSize: 13.0,
+                fontWeight: FontWeight.w600,
+                color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+              )),
             ),
             Text(
               "May 21, 2021",
@@ -272,7 +282,7 @@ class TransactionsSummaryPage extends StatelessWidget {
                   textStyle: TextStyle(
                       fontSize: 16.0,
                       fontWeight: FontWeight.w600,
-                      color: kTextColor1)),
+                      color: isDarkModeON ? kTextColor3 : kTextColor1)),
             ),
           ],
         ),

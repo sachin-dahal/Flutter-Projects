@@ -50,7 +50,7 @@ class TransactionsCardWidget extends StatelessWidget {
                           textStyle: TextStyle(
                               fontSize: 15.0,
                               fontWeight: FontWeight.w600,
-                              color: kTextColor1)),
+                              color: isDarkModeON ? kTextColor3 : kTextColor1)),
                     ),
                     Text(
                       status,
@@ -58,7 +58,9 @@ class TransactionsCardWidget extends StatelessWidget {
                           textStyle: TextStyle(
                               fontSize: 13.0,
                               fontWeight: FontWeight.w600,
-                              color: kPrimaryColor)),
+                              color: isDarkModeON
+                                  ? kTertiaryColor
+                                  : kPrimaryColor)),
                     ),
                   ],
                 ),
@@ -74,7 +76,7 @@ class TransactionsCardWidget extends StatelessWidget {
                       textStyle: TextStyle(
                           fontSize: 15.0,
                           fontWeight: FontWeight.w600,
-                          color: kTextColor1)),
+                          color: isDarkModeON ? kTextColor3 : kTextColor1)),
                 ),
                 Text(
                   date,
@@ -82,7 +84,8 @@ class TransactionsCardWidget extends StatelessWidget {
                       textStyle: TextStyle(
                           fontSize: 13.0,
                           fontWeight: FontWeight.w600,
-                          color: kPrimaryColor)),
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                 ),
               ],
             ),

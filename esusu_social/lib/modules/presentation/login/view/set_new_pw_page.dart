@@ -14,6 +14,7 @@ class SetNewPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Stack(
         children: [
           Container(),
@@ -58,14 +59,20 @@ class SetNewPasswordPage extends StatelessWidget {
                     "Enter the new password you would to\nuse and try login",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            color: kTextColor1,
+                            color: isDarkModeON ? kTextColor3 : kTextColor1,
                             fontSize: 13.0,
                             fontWeight: FontWeight.w500)),
                   ),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Password...", obscure: true),
+                  KTextField(
+                      isBgColor: isDarkModeON,
+                      hintText: "Password...",
+                      obscure: true),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Confirm Password...", obscure: true),
+                  KTextField(
+                      isBgColor: isDarkModeON,
+                      hintText: "Confirm Password...",
+                      obscure: true),
                   SizedBox(height: 25.0),
                 ],
               ),

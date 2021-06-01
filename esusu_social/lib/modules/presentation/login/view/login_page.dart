@@ -16,6 +16,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Stack(
         children: [
           Container(),
@@ -63,9 +64,9 @@ class LoginPage extends StatelessWidget {
                   SizedBox(height: 30.0),
                   Text("Login", style: kAuthTitleTextStyle),
                   SizedBox(height: 30.0),
-                  KTextField(hintText: "Email..."),
+                  KTextField(isBgColor: isDarkModeON, hintText: "Email..."),
                   SizedBox(height: 25.0),
-                  KTextField(hintText: "Password..."),
+                  KTextField(isBgColor: isDarkModeON, hintText: "Password..."),
                   SizedBox(height: 50.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,

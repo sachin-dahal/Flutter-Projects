@@ -22,7 +22,7 @@ class BillCard extends StatelessWidget {
         height: 80.0,
         width: Get.width * 0.4,
         decoration: BoxDecoration(
-            color: kTextColor3,
+            color: isDarkModeON ? kPrimaryColor : kTextColor3,
             borderRadius: BorderRadius.circular(15.0),
             boxShadow: [
               BoxShadow(
@@ -38,6 +38,7 @@ class BillCard extends StatelessWidget {
               Container(
                 height: 25.0,
                 child: Image(
+                  color: isDarkModeON ? kTextColor3 : kPrimaryColor,
                   image: AssetImage(imgUrl),
                   fit: BoxFit.cover,
                 ),
@@ -47,9 +48,10 @@ class BillCard extends StatelessWidget {
                 text,
                 style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w700,
-                        color: Colors.black)),
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w700,
+                  color: isDarkModeON ? kTextColor3 : kPrimaryColor,
+                )),
               )
             ],
           ),

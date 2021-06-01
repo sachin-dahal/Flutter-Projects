@@ -14,6 +14,7 @@ class PrivacyAndSecurityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -33,7 +34,11 @@ class PrivacyAndSecurityPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Biometrics for Login", style: kLabelStyle),
+                        Text(
+                          "Biometrics for Login",
+                          style: kLabelStyle.copyWith(
+                              color: isDarkModeON ? kTextColor3 : kTextColor1),
+                        ),
                         Transform.scale(
                           scale: 0.8,
                           child: CupertinoSwitch(
@@ -49,7 +54,11 @@ class PrivacyAndSecurityPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Biometrics for Transactions", style: kLabelStyle),
+                        Text(
+                          "Biometrics for Transactions",
+                          style: kLabelStyle.copyWith(
+                              color: isDarkModeON ? kTextColor3 : kTextColor1),
+                        ),
                         Transform.scale(
                           scale: 0.8,
                           child: CupertinoSwitch(

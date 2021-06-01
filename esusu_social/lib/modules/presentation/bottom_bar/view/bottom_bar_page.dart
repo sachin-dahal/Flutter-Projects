@@ -10,6 +10,7 @@ class BottomBarPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: GetBuilder<BottombarController>(
           builder: (_bottombarController) {
@@ -27,8 +28,10 @@ class BottomBarPage extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             items: _bottombarController.bottomNavBarItem,
             onTap: _bottombarController.changeIndex,
-            selectedItemColor: kPrimaryColor,
-            selectedIconTheme: IconThemeData(color: kPrimaryColor, size: 26.0),
+            backgroundColor: isDarkModeON ? kPrimaryColor : kTextColor3,
+            selectedIconTheme: IconThemeData(
+                color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+                size: 26.0),
             unselectedIconTheme:
                 IconThemeData(color: Colors.grey[400], size: 22.0),
           );

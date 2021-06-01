@@ -14,6 +14,7 @@ class NotificationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -28,7 +29,11 @@ class NotificationsPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Option 1", style: kLabelStyle),
+                        Text(
+                          "Option 1",
+                          style: kLabelStyle.copyWith(
+                              color: isDarkModeON ? kTextColor3 : kTextColor1),
+                        ),
                         Transform.scale(
                           scale: 0.8,
                           child: CupertinoSwitch(
@@ -44,7 +49,11 @@ class NotificationsPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Option 2", style: kLabelStyle),
+                        Text(
+                          "Option 2",
+                          style: kLabelStyle.copyWith(
+                              color: isDarkModeON ? kTextColor3 : kTextColor1),
+                        ),
                         Transform.scale(
                           scale: 0.8,
                           child: CupertinoSwitch(
@@ -60,7 +69,11 @@ class NotificationsPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text("Option 3", style: kLabelStyle),
+                        Text(
+                          "Option 3",
+                          style: kLabelStyle.copyWith(
+                              color: isDarkModeON ? kTextColor3 : kTextColor1),
+                        ),
                         Transform.scale(
                           scale: 0.8,
                           child: CupertinoSwitch(

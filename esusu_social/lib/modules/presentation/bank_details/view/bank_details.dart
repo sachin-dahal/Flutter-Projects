@@ -14,6 +14,7 @@ class BankDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: SingleChildScrollView(
         child: Container(
           child: GetBuilder<BankDetailsController>(
@@ -47,7 +48,12 @@ class BankDetailsPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(200.0),
                                 ),
                                 child: Image(
-                                  image: AssetImage("images/bank.png"),
+                                  color: isDarkModeON
+                                      ? kTextColor3
+                                      : Colors.grey[800],
+                                  image: AssetImage(
+                                    "images/bank.png",
+                                  ),
                                 ),
                               ),
                             ),
@@ -56,7 +62,8 @@ class BankDetailsPage extends StatelessWidget {
                                   .toUpperCase(),
                               textAlign: TextAlign.center,
                               style: kLinkLabelStyle.copyWith(
-                                  color: kTextColor1,
+                                  color:
+                                      isDarkModeON ? kTextColor3 : kTextColor1,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15.0),
                             ),

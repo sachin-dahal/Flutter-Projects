@@ -3,6 +3,7 @@ import 'package:esusu_social/modules/presentation/bill_payment/controller/bill_p
 import 'package:esusu_social/modules/presentation/bill_payment/view/bill_payment_details.dart';
 import 'package:esusu_social/modules/presentation/bill_payment/widgets/bill_card.dart';
 import 'package:esusu_social/modules/presentation/data/view/data_page.dart';
+import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,7 @@ class BillPaymentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [

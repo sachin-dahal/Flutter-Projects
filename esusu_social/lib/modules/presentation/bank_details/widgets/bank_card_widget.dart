@@ -18,7 +18,7 @@ class BankCardWidget extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 20.0),
       decoration: BoxDecoration(
-        color: kTextColor3,
+        color: isDarkModeON ? kPrimaryColor : kTextColor3,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -49,7 +49,8 @@ class BankCardWidget extends StatelessWidget {
                         textStyle: TextStyle(
                             fontSize: 12.0,
                             fontWeight: FontWeight.w700,
-                            color: kPrimaryColor)),
+                            color:
+                                isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   ),
                   Text(
                     accountHolder,
@@ -57,7 +58,7 @@ class BankCardWidget extends StatelessWidget {
                         textStyle: TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w700,
-                            color: kTextColor1)),
+                            color: isDarkModeON ? kTextColor3 : kTextColor1)),
                   ),
                   Text(
                     accNum,
@@ -65,7 +66,7 @@ class BankCardWidget extends StatelessWidget {
                         textStyle: TextStyle(
                             fontSize: 14.0,
                             fontWeight: FontWeight.w600,
-                            color: kTextColor1)),
+                            color: isDarkModeON ? kTextColor3 : kTextColor1)),
                   ),
                 ],
               ),
@@ -75,6 +76,7 @@ class BankCardWidget extends StatelessWidget {
             height: 25.0,
             padding: EdgeInsets.only(right: 15.0),
             child: Image(
+              color: isDarkModeON ? kTertiaryColor : Colors.red,
               image: AssetImage("images/delete.png"),
               fit: BoxFit.cover,
             ),

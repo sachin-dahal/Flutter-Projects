@@ -15,6 +15,7 @@ class WalletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: GetBuilder<WalletController>(
         builder: (_walletController) {
           return Container(
@@ -32,7 +33,7 @@ class WalletPage extends StatelessWidget {
                         child: Text(
                           "ENTER AMOUNT TO ADD IN WALLET",
                           style: kLinkLabelStyle.copyWith(
-                              color: kTextColor1,
+                              color: isDarkModeON ? kTextColor3 : kTextColor1,
                               fontWeight: FontWeight.w600,
                               fontSize: 15.0),
                         ),

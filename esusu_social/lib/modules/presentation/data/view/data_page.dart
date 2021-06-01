@@ -21,6 +21,7 @@ class DataPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -36,9 +37,10 @@ class DataPage extends StatelessWidget {
                     "MOBILE NUMBER",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.w600,
-                            color: kPrimaryColor)),
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.w600,
+                      color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+                    )),
                   ),
                   _buildMobileNumberPanel(),
                   SizedBox(height: 20.0),
@@ -46,9 +48,10 @@ class DataPage extends StatelessWidget {
                     "Select Network Provider".toUpperCase(),
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.w600,
-                            color: kPrimaryColor)),
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.w600,
+                      color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+                    )),
                   ),
                   _buildPinPanel(),
                   SizedBox(height: 20.0),
@@ -56,9 +59,10 @@ class DataPage extends StatelessWidget {
                     "Select an option".toUpperCase(),
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.w600,
-                            color: kPrimaryColor)),
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.w600,
+                      color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+                    )),
                   ),
                   GestureDetector(
                       onTap: () {
@@ -70,6 +74,7 @@ class DataPage extends StatelessWidget {
                       child: Container(
                         color: Colors.white.withOpacity(0),
                         child: KTextField(
+                          isBgColor: isDarkModeON,
                           hintText: "1 GB, 400 Minutes @ 900",
                           readOnly: true,
                         ),
@@ -121,6 +126,7 @@ class DataPage extends StatelessWidget {
       children: [
         Expanded(
           child: KTextField(
+            isBgColor: isDarkModeON,
             prefix: Padding(
               padding: EdgeInsets.only(right: 20.0),
               child: Text(
@@ -128,7 +134,7 @@ class DataPage extends StatelessWidget {
                 textAlign: TextAlign.end,
                 style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: kTextColor1,
+                        color: isDarkModeON ? kTextColor3 : kTextColor1,
                         fontSize: 15.0,
                         fontWeight: FontWeight.w500)),
               ),
@@ -180,6 +186,7 @@ class DataPage extends StatelessWidget {
           ),
           SizedBox(height: 10.0),
           KTextField(
+              isBgColor: isDarkModeON,
               hintText: "Search...",
               suffix: Icon(
                 FeatherIcons.search,
@@ -192,21 +199,27 @@ class DataPage extends StatelessWidget {
               Text("1 GB, 400 Minutes @ 900",
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                          color: kTextColor1.withOpacity(0.5),
+                          color: isDarkModeON
+                              ? kTextColor3
+                              : kTextColor1.withOpacity(0.5),
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500))),
               SizedBox(height: 15.0),
               Text("1 GB, 400 Minutes @ 900",
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                          color: kTextColor1.withOpacity(0.5),
+                          color: isDarkModeON
+                              ? kTextColor3
+                              : kTextColor1.withOpacity(0.5),
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500))),
               SizedBox(height: 15.0),
               Text("1 GB, 400 Minutes @ 900",
                   style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                          color: kTextColor1.withOpacity(0.5),
+                          color: isDarkModeON
+                              ? kTextColor3
+                              : kTextColor1.withOpacity(0.5),
                           fontSize: 16.0,
                           fontWeight: FontWeight.w500))),
             ],

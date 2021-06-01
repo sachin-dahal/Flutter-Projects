@@ -14,6 +14,7 @@ class ForgotPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Stack(
         children: [
           Container(),
@@ -58,12 +59,12 @@ class ForgotPasswordPage extends StatelessWidget {
                     "Enter your email address to confirm\nyour identity",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            color: kTextColor1,
+                            color: isDarkModeON ? kTextColor3 : kTextColor1,
                             fontSize: 13.0,
                             fontWeight: FontWeight.w500)),
                   ),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Email..."),
+                  KTextField(isBgColor: isDarkModeON, hintText: "Email..."),
                   SizedBox(height: 25.0),
                 ],
               ),

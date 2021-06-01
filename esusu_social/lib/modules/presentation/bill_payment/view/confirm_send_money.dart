@@ -1,12 +1,9 @@
 import 'package:esusu_social/common/kAppBar.dart';
 import 'package:esusu_social/common/kButton.dart';
-import 'package:esusu_social/common/kTextField.dart';
-import 'package:esusu_social/common/styles.dart';
 import 'package:esusu_social/modules/presentation/bill_payment/controller/bill_payment_controller.dart';
 import 'package:esusu_social/modules/presentation/bottom_bar/view/bottom_bar_page.dart';
 import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -16,6 +13,7 @@ class ConfirmSendMoneyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -37,7 +35,9 @@ class ConfirmSendMoneyPage extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
-                                color: kPrimaryColor)),
+                                color: isDarkModeON
+                                    ? kTertiaryColor
+                                    : kPrimaryColor)),
                       ),
                       Text(
                         "Access Bank".toUpperCase(),
@@ -45,7 +45,8 @@ class ConfirmSendMoneyPage extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
-                                color: kTextColor1)),
+                                color:
+                                    isDarkModeON ? kTextColor3 : kTextColor1)),
                       )
                     ],
                   ),
@@ -59,7 +60,9 @@ class ConfirmSendMoneyPage extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
-                                color: kPrimaryColor)),
+                                color: isDarkModeON
+                                    ? kTertiaryColor
+                                    : kPrimaryColor)),
                       ),
                       Text(
                         "1234567890123".toUpperCase(),
@@ -67,7 +70,8 @@ class ConfirmSendMoneyPage extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
-                                color: kTextColor1)),
+                                color:
+                                    isDarkModeON ? kTextColor3 : kTextColor1)),
                       )
                     ],
                   ),
@@ -81,7 +85,9 @@ class ConfirmSendMoneyPage extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
-                                color: kPrimaryColor)),
+                                color: isDarkModeON
+                                    ? kTertiaryColor
+                                    : kPrimaryColor)),
                       ),
                       Text(
                         "900 INR".toUpperCase(),
@@ -89,7 +95,8 @@ class ConfirmSendMoneyPage extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
-                                color: kTextColor1)),
+                                color:
+                                    isDarkModeON ? kTextColor3 : kTextColor1)),
                       )
                     ],
                   ),

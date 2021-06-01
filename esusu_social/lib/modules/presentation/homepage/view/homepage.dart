@@ -1,6 +1,5 @@
 import 'package:esusu_social/common/kButton.dart';
 import 'package:esusu_social/common/styles.dart';
-import 'package:esusu_social/modules/presentation/add_wallet/view/add_wallet_page.dart';
 import 'package:esusu_social/modules/presentation/bill_payment/view/bill_payment.dart';
 import 'package:esusu_social/modules/presentation/homepage/controller/homepage_controller.dart';
 import 'package:esusu_social/modules/presentation/homepage/widgets/label_card_widget.dart';
@@ -26,6 +25,7 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: SingleChildScrollView(
         child: Container(
           child: GetBuilder<HomepageController>(
@@ -103,8 +103,13 @@ class Homepage extends StatelessWidget {
                                     right: 5.0,
                                     bottom: Get.height > 700.0 ? 10.0 : 0.0),
                                 decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ),
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    boxShadow: [
+                                      BoxShadow(
+                                          color: kShadowColor.withOpacity(0.2),
+                                          offset: Offset(0, 0),
+                                          blurRadius: 3.0),
+                                    ]),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,8 +120,11 @@ class Homepage extends StatelessWidget {
                                         physics: BouncingScrollPhysics(),
                                         onPageChanged:
                                             _homepageController.changeIndex,
-                                        children:
-                                            _homepageController.onboardingPages,
+                                        children: isDarkModeON
+                                            ? _homepageController
+                                                .onboardingPagesDarkMode
+                                            : _homepageController
+                                                .onboardingPages,
                                       ),
                                     ),
                                   ],
@@ -165,12 +173,18 @@ class Homepage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("Quick Links",
-                          style: kAuthTitleTextStyle.copyWith(fontSize: 16.0)),
+                          style: isDarkModeON
+                              ? kAuthTitleTextStyle.copyWith(
+                                  fontSize: 16.0, color: kTextColor3)
+                              : kAuthTitleTextStyle.copyWith(fontSize: 16.0)),
                       SizedBox(height: 10.0),
                       _buildQuickLinksPanel(),
                       SizedBox(height: 30.0),
                       Text("Transactions",
-                          style: kAuthTitleTextStyle.copyWith(fontSize: 16.0)),
+                          style: isDarkModeON
+                              ? kAuthTitleTextStyle.copyWith(
+                                  fontSize: 16.0, color: kTextColor3)
+                              : kAuthTitleTextStyle.copyWith(fontSize: 16.0)),
                       SizedBox(height: 10.0),
                       _buildTransactionsPanel(),
                       SizedBox(height: 100.0),
@@ -204,7 +218,11 @@ class Homepage extends StatelessWidget {
             date: "May 21, 2021",
             onPressed: () {},
           ),
-          Divider(height: 2, thickness: 1),
+          Divider(
+            height: 2,
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[400],
+          ),
           TransactionsCardWidget(
             imgUrl: "images/done.png",
             title: "Transfer to Denial",
@@ -213,7 +231,11 @@ class Homepage extends StatelessWidget {
             date: "May 21, 2021",
             onPressed: () {},
           ),
-          Divider(height: 2, thickness: 1),
+          Divider(
+            height: 2,
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[400],
+          ),
           TransactionsCardWidget(
             imgUrl: "images/not_done.png",
             title: "Transfer to Denial",

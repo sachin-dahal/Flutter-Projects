@@ -10,6 +10,7 @@ class FundUnSuccessfulPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -63,7 +64,7 @@ class FundUnSuccessfulPage extends StatelessWidget {
                     "Funds has been Failed to added to wallet".toUpperCase(),
                     textAlign: TextAlign.center,
                     style: kLinkLabelStyle.copyWith(
-                        color: kTextColor1,
+                        color: isDarkModeON ? kTextColor3 : kTextColor1,
                         fontWeight: FontWeight.w600,
                         fontSize: 15.0),
                   ),

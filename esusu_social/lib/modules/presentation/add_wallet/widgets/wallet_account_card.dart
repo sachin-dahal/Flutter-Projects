@@ -39,9 +39,10 @@ class WalletAccountCard extends StatelessWidget {
                     title,
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            fontSize: 13.0,
-                            fontWeight: FontWeight.w600,
-                            color: kPrimaryColor)),
+                      fontSize: 13.0,
+                      fontWeight: FontWeight.w600,
+                      color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+                    )),
                   ),
                   Text(
                     subtitle,
@@ -49,7 +50,7 @@ class WalletAccountCard extends StatelessWidget {
                         textStyle: TextStyle(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w600,
-                            color: kTextColor1)),
+                            color: isDarkModeON ? kTextColor3 : kTextColor1)),
                   ),
                 ],
               ),

@@ -1,6 +1,7 @@
 import 'package:esusu_social/common/kAppBar.dart';
 import 'package:esusu_social/modules/presentation/transactions/view/transactions_summary_page.dart';
 import 'package:esusu_social/modules/presentation/transactions/widget/transaction_card_widget.dart';
+import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -8,6 +9,7 @@ class TransactionsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -37,7 +39,11 @@ class TransactionsPage extends StatelessWidget {
                           date: "May 21, 2021",
                           onPressed: () => Get.to(TransactionsSummaryPage()),
                         ),
-                        Divider(height: 2, thickness: 1),
+                        Divider(
+                          height: 2,
+                          thickness: 1,
+                          color: isDarkModeON ? kTextColor3 : Colors.grey[400],
+                        ),
                         TransactionsCardWidget(
                           imgUrl: "images/done.png",
                           title: "Transfer to Denial",
@@ -46,7 +52,11 @@ class TransactionsPage extends StatelessWidget {
                           date: "May 21, 2021",
                           onPressed: () => Get.to(TransactionsSummaryPage()),
                         ),
-                        Divider(height: 2, thickness: 1),
+                        Divider(
+                          height: 2,
+                          thickness: 1,
+                          color: isDarkModeON ? kTextColor3 : Colors.grey[400],
+                        ),
                         TransactionsCardWidget(
                           imgUrl: "images/not_done.png",
                           title: "Transfer to Denial",

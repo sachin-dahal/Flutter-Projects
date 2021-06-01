@@ -21,6 +21,7 @@ class OTPVerifyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Stack(
         children: [
           Container(),
@@ -65,7 +66,7 @@ class OTPVerifyPage extends StatelessWidget {
                     "Enter the pin code you received by text msg",
                     style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            color: kTextColor1,
+                            color: isDarkModeON ? kTextColor3 : kTextColor1,
                             fontSize: 13.0,
                             fontWeight: FontWeight.w500)),
                   ),

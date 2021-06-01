@@ -2,24 +2,36 @@ import 'package:esusu_social/common/kAppBar.dart';
 import 'package:esusu_social/common/styles.dart';
 import 'package:esusu_social/modules/presentation/account_page/widgets/acc_button_widget.dart';
 import 'package:esusu_social/modules/presentation/bank_details/view/bank_details.dart';
+import 'package:esusu_social/modules/presentation/bottom_bar/controller/bottom_bar_controller.dart';
+import 'package:esusu_social/modules/presentation/bottom_bar/view/bottom_bar_page.dart';
 import 'package:esusu_social/modules/presentation/bvn_verification/view/bvn_verification_page.dart';
+import 'package:esusu_social/modules/presentation/homepage/controller/homepage_controller.dart';
 import 'package:esusu_social/modules/presentation/invite_friends/view/invite_friends_page.dart';
 import 'package:esusu_social/modules/presentation/notifications/view/notifications_page.dart';
 import 'package:esusu_social/modules/presentation/personal_details/view/personal_details.dart';
 import 'package:esusu_social/modules/presentation/privacy_and_security/view/privacy_and_security.dart';
 import 'package:esusu_social/modules/presentation/terms_and_conditions/view/terms_and_conditions.dart';
 import 'package:esusu_social/modules/presentation/upgrade_account/view/upgrade_account_page.dart';
-import 'package:esusu_social/modules/presentation/wallet/view/wallet_page.dart';
+import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class AccountPage extends StatelessWidget {
+class AccountPage extends StatefulWidget {
+  @override
+  _AccountPageState createState() => _AccountPageState();
+}
+
+class _AccountPageState extends State<AccountPage> {
   final height = Get.height;
+
   final width = Get.width;
+  final BottombarController _bottombarController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -37,12 +49,46 @@ class AccountPage extends StatelessWidget {
                     text: "Personal Details",
                     onPressed: () => Get.to(PersonalDetailsPage()),
                   ),
-                  //TODO: just for navigation v
-                  AccButton(
-                    text: "Wallet",
-                    onPressed: () => Get.to(WalletPage()),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 20.0),
+                    height: 50.0,
+                    width: width - 40.0,
+                    padding: EdgeInsets.only(left: 20.0, right: 10.0),
+                    decoration: BoxDecoration(
+                      color: isDarkModeON ? kPrimaryColor : kTextColor3,
+                      borderRadius: BorderRadius.circular(12.0),
+                      boxShadow: [
+                        BoxShadow(
+                            color: kShadowColor.withOpacity(0.2),
+                            offset: Offset(0, 0),
+                            blurRadius: 3.0),
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          "Dark Mode",
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                color: isDarkModeON ? kTextColor3 : kTextColor1,
+                                fontSize: 16.0),
+                          ),
+                        ),
+                        Switch(
+                            value: isDarkModeON,
+                            activeColor: Colors.lightBlue,
+                            activeTrackColor: kTextColor1.withOpacity(0.5),
+                            onChanged: (val) {
+                              setState(() {
+                                isDarkModeON = val;
+                                _bottombarController.update();
+                              });
+                            })
+                      ],
+                    ),
                   ),
-                  //TODO: just for navigation ^
                   AccButton(
                     text: "Upgrade Account",
                     onPressed: () => Get.to(UpgradeAccountPage()),
@@ -110,9 +156,16 @@ class AccountPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Darrell Chan",
-                    style: kAuthTitleTextStyle.copyWith(fontSize: 23.0)),
-                Text("abc@gmail.com", style: kLinkLabelStyle),
+                Text(
+                  "Darrell Chan",
+                  style: isDarkModeON
+                      ? kAuthTitleTextStyle.copyWith(
+                          fontSize: 23.0, color: kTextColor3)
+                      : kAuthTitleTextStyle.copyWith(fontSize: 23.0),
+                ),
+                Text("abc@gmail.com",
+                    style: kLinkLabelStyle.copyWith(
+                        color: isDarkModeON ? kTertiaryColor : kPrimaryColor)),
               ],
             ),
           )

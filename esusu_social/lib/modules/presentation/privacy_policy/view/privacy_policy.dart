@@ -1,5 +1,6 @@
 import 'package:esusu_social/common/kAppBar.dart';
 import 'package:esusu_social/common/styles.dart';
+import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -7,6 +8,7 @@ class PrivacyPolicypage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [

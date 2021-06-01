@@ -13,6 +13,7 @@ class UpgradeAccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -41,7 +42,7 @@ class UpgradeAccountPage extends StatelessWidget {
                           child: Text(
                             "Upgrade Your account".toUpperCase(),
                             style: kLinkLabelStyle.copyWith(
-                                color: kTextColor1,
+                                color: isDarkModeON ? kTextColor3 : kTextColor1,
                                 fontWeight: FontWeight.w600,
                                 fontSize: 15.0),
                           ),
@@ -59,7 +60,8 @@ class UpgradeAccountPage extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 20.0),
-                        KTextField(hintText: "Enter BVN..."),
+                        KTextField(
+                            isBgColor: isDarkModeON, hintText: "Enter BVN..."),
                         SizedBox(height: 60.0),
                         ClipOval(
                             child: Container(
@@ -68,18 +70,23 @@ class UpgradeAccountPage extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100.0),
                             border: Border.all(
-                              color: Colors.grey[400],
+                              color: isDarkModeON
+                                  ? kTertiaryColor
+                                  : Colors.grey[400],
                             ),
                           ),
                           child: Padding(
                             padding: EdgeInsets.all(35.0),
                             child: Image(
+                              color: isDarkModeON
+                                  ? kTertiaryColor
+                                  : Colors.grey[400],
                               image: AssetImage("images/img.png"),
                               fit: BoxFit.cover,
                             ),
                           ),
                         )),
-                        SizedBox(height: 10.0),
+                        SizedBox(height: 15.0),
                         Center(
                           child: Text(
                             "Upload Image",

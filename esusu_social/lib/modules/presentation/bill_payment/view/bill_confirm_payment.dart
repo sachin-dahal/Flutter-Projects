@@ -21,6 +21,7 @@ class BillConfirmPaymentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -33,11 +34,16 @@ class BillConfirmPaymentPage extends StatelessWidget {
                 children: [
                   SizedBox(height: 10.0),
                   Text("Select payment method".toUpperCase(),
-                      style: kLinkLabelStyle),
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   SizedBox(height: 5.0),
                   _buildRadioButtons(),
                   SizedBox(height: 25.0),
-                  Text("Select card".toUpperCase(), style: kLinkLabelStyle),
+                  Text("Select card".toUpperCase(),
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   _buildDropDown(),
                   SizedBox(height: 25.0),
                   _buildVisaCard(),
@@ -59,7 +65,8 @@ class BillConfirmPaymentPage extends StatelessWidget {
                             textStyle: TextStyle(
                                 fontSize: 15.0,
                                 fontWeight: FontWeight.w700,
-                                color: kTextColor1)),
+                                color:
+                                    isDarkModeON ? kTextColor3 : kTextColor1)),
                       )
                     ],
                   ),
@@ -165,7 +172,7 @@ class BillConfirmPaymentPage extends StatelessWidget {
                     textStyle: TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.w700,
-                        color: kTextColor1)),
+                        color: isDarkModeON ? kTextColor3 : kTextColor1)),
               ),
             ),
           ),
@@ -181,7 +188,7 @@ class BillConfirmPaymentPage extends StatelessWidget {
                     textStyle: TextStyle(
                         fontSize: 15.0,
                         fontWeight: FontWeight.w700,
-                        color: kTextColor1)),
+                        color: isDarkModeON ? kTextColor3 : kTextColor1)),
               ),
             ),
           ),
@@ -194,7 +201,7 @@ class BillConfirmPaymentPage extends StatelessWidget {
   Widget _buildDropDown() {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFFF0F2F4),
+        color: isDarkModeON ? kDarkBackgroundColor : Color(0xFFF0F2F4),
         borderRadius: BorderRadius.circular(5.0),
       ),
       child:
@@ -206,9 +213,10 @@ class BillConfirmPaymentPage extends StatelessWidget {
             thickness: 1.5,
             height: 0.0,
           ),
-          focusColor: Color(0xFFF0F2F4),
+          focusColor: isDarkModeON ? kDarkBackgroundColor : Color(0xFFF0F2F4),
           value: _billPaymentController.selectedCard,
           icon: Icon(FeatherIcons.chevronDown),
+          dropdownColor: isDarkModeON ? kDarkBackgroundColor : kTextColor3,
           items: _billPaymentController.cardList.map((String value) {
             return DropdownMenuItem<String>(
               value: value,
@@ -216,7 +224,8 @@ class BillConfirmPaymentPage extends StatelessWidget {
                 value,
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
-                        color: kTextColor1, fontWeight: FontWeight.w500)),
+                        color: isDarkModeON ? kTextColor3 : kTextColor1,
+                        fontWeight: FontWeight.w500)),
               ),
             );
           }).toList(),

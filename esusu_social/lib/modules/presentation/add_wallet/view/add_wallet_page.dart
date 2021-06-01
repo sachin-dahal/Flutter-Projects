@@ -16,6 +16,7 @@ class AddWalletPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: GetBuilder<AddWalletController>(
           builder: (_addWalletController) {
@@ -72,7 +73,7 @@ class AddWalletPage extends StatelessWidget {
             child: Text(
               "Transfer to the bank account".toUpperCase(),
               style: kLinkLabelStyle.copyWith(
-                  color: kTextColor1,
+                  color: isDarkModeON ? kTextColor3 : kTextColor1,
                   fontWeight: FontWeight.w600,
                   fontSize: 15.0),
             ),
@@ -82,11 +83,13 @@ class AddWalletPage extends StatelessWidget {
             "Enter Topup Amount (\$)".toUpperCase(),
             style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                    fontSize: 13.0,
-                    fontWeight: FontWeight.w600,
-                    color: kPrimaryColor)),
+              fontSize: 13.0,
+              fontWeight: FontWeight.w600,
+              color: isDarkModeON ? kTertiaryColor : kPrimaryColor,
+            )),
           ),
           KTextField(
+            isBgColor: isDarkModeON,
             hintText: "10000",
           ),
           SizedBox(height: 30.0),
@@ -97,7 +100,8 @@ class AddWalletPage extends StatelessWidget {
           ),
           Divider(
             height: 15.0,
-            thickness: 2,
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[100],
           ),
           WalletAccountCard(
             title: "Access Bank",
@@ -106,7 +110,8 @@ class AddWalletPage extends StatelessWidget {
           ),
           Divider(
             height: 15.0,
-            thickness: 2,
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[100],
           ),
           WalletAccountCard(
             title: "Access Bank",
@@ -115,8 +120,8 @@ class AddWalletPage extends StatelessWidget {
           ),
           Divider(
             height: 15.0,
-            thickness: 2,
-            color: kTextColor1.withOpacity(0.3),
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[100],
           ),
         ],
       ),
@@ -132,7 +137,7 @@ class AddWalletPage extends StatelessWidget {
             child: Text(
               "Transfer to the account Below".toUpperCase(),
               style: kLinkLabelStyle.copyWith(
-                  color: kTextColor1,
+                  color: isDarkModeON ? kTextColor3 : kTextColor1,
                   fontWeight: FontWeight.w600,
                   fontSize: 15.0),
             ),
@@ -142,7 +147,8 @@ class AddWalletPage extends StatelessWidget {
               title: "Bank", subtitle: "Sterlink Bank", isButton: false),
           Divider(
             height: 15.0,
-            thickness: 2,
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[100],
           ),
           WalletAccountCard(
             title: "Bank",
@@ -151,13 +157,15 @@ class AddWalletPage extends StatelessWidget {
           ),
           Divider(
             height: 15.0,
-            thickness: 2,
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[100],
           ),
           WalletAccountCard(
               title: "Beneficiary", subtitle: "Denial Ozeh", isButton: false),
           Divider(
             height: 15.0,
-            thickness: 2,
+            thickness: 1,
+            color: isDarkModeON ? kTextColor3 : Colors.grey[100],
           ),
         ],
       ),

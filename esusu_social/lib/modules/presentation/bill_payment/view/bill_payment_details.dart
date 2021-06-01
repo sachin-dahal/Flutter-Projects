@@ -22,6 +22,7 @@ class BillPaymentDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Container(
         child: Column(
           children: [
@@ -31,13 +32,20 @@ class BillPaymentDetailsPage extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
                 children: [
                   SizedBox(height: 10.0),
-                  Text("Mobile Number".toUpperCase(), style: kLinkLabelStyle),
+                  Text("Mobile Number".toUpperCase(),
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   SizedBox(height: 5.0),
                   KTextField(
+                    isBgColor: isDarkModeON,
                     hintText: "Enter Mobile Number",
                   ),
                   SizedBox(height: 25.0),
-                  Text("Select package".toUpperCase(), style: kLinkLabelStyle),
+                  Text("Select package".toUpperCase(),
+                      style: kLinkLabelStyle.copyWith(
+                          color:
+                              isDarkModeON ? kTertiaryColor : kPrimaryColor)),
                   _buildDropDown(),
                 ],
               ),
@@ -55,7 +63,7 @@ class BillPaymentDetailsPage extends StatelessWidget {
   Widget _buildDropDown() {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFFF0F2F4),
+        color: isDarkModeON ? kDarkBackgroundColor : Color(0xFFF0F2F4),
         borderRadius: BorderRadius.circular(5.0),
       ),
       child:
@@ -67,9 +75,10 @@ class BillPaymentDetailsPage extends StatelessWidget {
             thickness: 1.5,
             height: 0.0,
           ),
-          focusColor: Color(0xFFF0F2F4),
+          focusColor: isDarkModeON ? kDarkBackgroundColor : Color(0xFFF0F2F4),
           value: _billPaymentController.selectedItem,
           icon: Icon(FeatherIcons.chevronDown),
+          dropdownColor: isDarkModeON ? kDarkBackgroundColor : kTextColor3,
           items: _billPaymentController.packageList.map((String value) {
             return DropdownMenuItem<String>(
               value: value,
@@ -77,7 +86,8 @@ class BillPaymentDetailsPage extends StatelessWidget {
                 value,
                 style: GoogleFonts.inter(
                     textStyle: TextStyle(
-                        color: kTextColor1, fontWeight: FontWeight.w500)),
+                        color: isDarkModeON ? kTextColor3 : kTextColor1,
+                        fontWeight: FontWeight.w500)),
               ),
             );
           }).toList(),

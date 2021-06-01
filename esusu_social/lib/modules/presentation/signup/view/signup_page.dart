@@ -14,6 +14,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: Stack(
         children: [
           Container(),
@@ -56,19 +57,23 @@ class SignUpPage extends StatelessWidget {
                   SizedBox(height: 20.0),
                   Text("Sign Up", style: kAuthTitleTextStyle),
                   SizedBox(height: 15.0),
-                  KTextField(hintText: "First Name..."),
+                  KTextField(
+                      isBgColor: isDarkModeON, hintText: "First Name..."),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Last Name..."),
+                  KTextField(isBgColor: isDarkModeON, hintText: "Last Name..."),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Phone Number..."),
+                  KTextField(
+                      isBgColor: isDarkModeON, hintText: "Phone Number..."),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Email..."),
+                  KTextField(isBgColor: isDarkModeON, hintText: "Email..."),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Password..."),
+                  KTextField(isBgColor: isDarkModeON, hintText: "Password..."),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Confirm Password..."),
+                  KTextField(
+                      isBgColor: isDarkModeON, hintText: "Confirm Password..."),
                   SizedBox(height: 20.0),
-                  KTextField(hintText: "Referrer Code..."),
+                  KTextField(
+                      isBgColor: isDarkModeON, hintText: "Referrer Code..."),
                   SizedBox(height: 15.0),
                   GestureDetector(
                     onTap: () => Get.off(LoginPage()),
