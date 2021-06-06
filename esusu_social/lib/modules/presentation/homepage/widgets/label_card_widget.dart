@@ -13,7 +13,7 @@ class LabelCardWidget extends StatelessWidget {
     @required this.text,
     @required this.color,
     @required this.onPressed,
-    this.fontSize = 13.0,
+    this.fontSize = 12.0,
   });
 
   @override
@@ -21,17 +21,17 @@ class LabelCardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        height: 125.0,
-        width: 105.0,
+        height: 100.0,
+        width: 90.0,
         padding: EdgeInsets.symmetric(horizontal: 10.0),
         decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.circular(15.0)),
+            color: color, borderRadius: BorderRadius.circular(12.0)),
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                height: 45.0,
+                height: 35.0,
                 child: Image(
                   image: AssetImage(imgUrl),
                   fit: BoxFit.cover,

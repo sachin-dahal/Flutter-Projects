@@ -1,6 +1,6 @@
 import 'package:get/state_manager.dart';
 
-class NotificationsPageController extends GetxController {
+class SettingsPageController extends GetxController {
   bool option1 = true;
   bool option2 = false;
   bool option3 = false;

@@ -113,8 +113,8 @@ class PersonalDetailsPage extends StatelessWidget {
   Widget _buildCenterImage() {
     return Center(
       child: Container(
-        height: 170.0,
-        width: 170.0,
+        height: 150.0,
+        width: 150.0,
         padding: EdgeInsets.only(left: 15.0),
         child: Stack(
           children: [
@@ -122,8 +122,8 @@ class PersonalDetailsPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 10.0),
               child: Container(
-                height: 140.0,
-                width: 140.0,
+                height: 120.0,
+                width: 120.0,
                 child: Image(
                   image: AssetImage("images/user.png"),
                   fit: BoxFit.cover,
@@ -131,17 +131,17 @@ class PersonalDetailsPage extends StatelessWidget {
               ),
             ),
             Positioned(
-              top: 0,
-              right: 6,
+              top: 2,
+              right: 8,
               child: CircleAvatar(
-                radius: 17,
+                radius: 15,
                 backgroundColor: kTextColor3,
                 child: CircleAvatar(
                   radius: 14,
                   backgroundColor: kPrimaryColor,
                   child: Icon(
                     Icons.edit,
-                    size: 18.0,
+                    size: 17.0,
                   ),
                 ),
               ),

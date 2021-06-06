@@ -23,12 +23,12 @@ class LoginPage extends StatelessWidget {
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: height * 0.06),
+              SizedBox(height: height * 0.18),
               Container(
                 width: width,
                 child: Image(
                   image: AssetImage("images/esusu_main.png"),
-                  height: 55.0,
+                  height: 35.0,
                 ),
               ),
               Container(

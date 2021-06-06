@@ -34,13 +34,13 @@ class Homepage extends StatelessWidget {
                 children: [
                   Stack(
                     children: [
-                      Container(height: 300),
+                      Container(height: 280),
                       _buildAppBarPanel(),
                       Positioned(
-                        top: height * 0.15,
+                        top: height * 0.14,
                         left: 20.0,
                         child: Container(
-                          padding: EdgeInsets.only(bottom: 20.0),
+                          padding: EdgeInsets.only(bottom: 5.0),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,7 +54,7 @@ class Homepage extends StatelessWidget {
                                   children: [
                                     Text("Good Evening, Darrell",
                                         style: kAuthTitleTextStyle.copyWith(
-                                            fontSize: 18.0,
+                                            fontSize: 16.0,
                                             color: kTextColor3)),
                                     Stack(
                                       alignment: Alignment.center,
@@ -144,8 +144,8 @@ class Homepage extends StatelessWidget {
                         AnimatedContainer(
                           duration: Duration(milliseconds: 300),
                           margin: EdgeInsets.symmetric(horizontal: 5.0),
-                          height: 11.0,
-                          width: 11.0,
+                          height: 9.0,
+                          width: 9.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100.0),
                             color: _homepageController.selectedIndex == 0
@@ -156,8 +156,8 @@ class Homepage extends StatelessWidget {
                         AnimatedContainer(
                           duration: Duration(milliseconds: 300),
                           margin: EdgeInsets.symmetric(horizontal: 5.0),
-                          height: 11.0,
-                          width: 11.0,
+                          height: 9.0,
+                          width: 9.0,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(100.0),
                             color: _homepageController.selectedIndex == 1
@@ -168,7 +168,7 @@ class Homepage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 20.0),
+                  SizedBox(height: 10.0),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -180,14 +180,14 @@ class Homepage extends StatelessWidget {
                       SizedBox(height: 10.0),
                       _buildQuickLinksPanel(),
                       SizedBox(height: 30.0),
-                      Text("Transactions",
-                          style: isDarkModeON
-                              ? kAuthTitleTextStyle.copyWith(
-                                  fontSize: 16.0, color: kTextColor3)
-                              : kAuthTitleTextStyle.copyWith(fontSize: 16.0)),
-                      SizedBox(height: 10.0),
-                      _buildTransactionsPanel(),
-                      SizedBox(height: 100.0),
+                      // Text("Transactions",
+                      //     style: isDarkModeON
+                      //         ? kAuthTitleTextStyle.copyWith(
+                      //             fontSize: 16.0, color: kTextColor3)
+                      //         : kAuthTitleTextStyle.copyWith(fontSize: 16.0)),
+                      // SizedBox(height: 10.0),
+                      // _buildTransactionsPanel(),
+                      // SizedBox(height: 100.0),
                     ],
                   ),
                 ],
@@ -261,7 +261,7 @@ class Homepage extends StatelessWidget {
       width: width * 0.95,
       child: Center(
         child: Wrap(
-          spacing: 10.0,
+          spacing: 15.0,
           runSpacing: 12.0,
           children: [
             LabelCardWidget(
@@ -340,11 +340,14 @@ class Homepage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Container(
-            height: 18.0,
-            child: Image(
-              image: AssetImage("images/menu.png"),
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () => Get.to(TransactionsPage()),
+            child: Container(
+              height: 18.0,
+              child: Image(
+                image: AssetImage("images/menu.png"),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Text(

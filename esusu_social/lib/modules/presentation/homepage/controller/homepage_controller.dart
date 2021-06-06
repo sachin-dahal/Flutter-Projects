@@ -1,5 +1,6 @@
 import 'package:esusu_social/common/styles.dart';
 import 'package:esusu_social/modules/presentation/add_wallet/view/add_wallet_page.dart';
+import 'package:esusu_social/modules/presentation/withdraw_funds/view/withdraw_funds_page.dart';
 import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -59,12 +60,15 @@ class HomepageController extends GetxController {
                     fontSize: 11.0,
                     fontWeight: FontWeight.w500),
               ),
-              Text(
-                "Withdraw Funds",
-                style: kLinkLabelStyle.copyWith(
-                    fontSize: 10.0,
-                    fontWeight: FontWeight.w800,
-                    color: Colors.red),
+              GestureDetector(
+                onTap: () => Get.to(WithdrawFundsPage()),
+                child: Text(
+                  "Withdraw Funds",
+                  style: kLinkLabelStyle.copyWith(
+                      fontSize: 10.0,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.red),
+                ),
               ),
             ],
           )
@@ -76,7 +80,7 @@ class HomepageController extends GetxController {
       width: Get.width * 0.88,
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
       decoration: BoxDecoration(
-        color: Colors.red[100],
+        color: kTextColor3,
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(
@@ -85,11 +89,11 @@ class HomepageController extends GetxController {
         children: [
           Text("My Wallet",
               style: kAuthTitleTextStyle.copyWith(
-                  color: kTextColor3, fontSize: 18.0)),
+                  color: kTextColor1, fontSize: 18.0)),
           Center(
             child: Text("\$7,425",
                 style: kLinkLabelStyle.copyWith(
-                    color: kTextColor3,
+                    color: Color(0xFF056A9E),
                     fontSize: 28.0,
                     fontWeight: FontWeight.w800,
                     letterSpacing: 1.5)),
@@ -193,7 +197,7 @@ class HomepageController extends GetxController {
       width: Get.width * 0.88,
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
       decoration: BoxDecoration(
-        color: Colors.red[100],
+        color: kTextColor3,
         borderRadius: BorderRadius.circular(10.0),
       ),
       child: Column(

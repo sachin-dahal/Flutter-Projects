@@ -3,13 +3,11 @@ import 'package:esusu_social/common/styles.dart';
 import 'package:esusu_social/modules/presentation/account_page/widgets/acc_button_widget.dart';
 import 'package:esusu_social/modules/presentation/bank_details/view/bank_details.dart';
 import 'package:esusu_social/modules/presentation/bottom_bar/controller/bottom_bar_controller.dart';
-import 'package:esusu_social/modules/presentation/bottom_bar/view/bottom_bar_page.dart';
 import 'package:esusu_social/modules/presentation/bvn_verification/view/bvn_verification_page.dart';
-import 'package:esusu_social/modules/presentation/homepage/controller/homepage_controller.dart';
 import 'package:esusu_social/modules/presentation/invite_friends/view/invite_friends_page.dart';
-import 'package:esusu_social/modules/presentation/notifications/view/notifications_page.dart';
 import 'package:esusu_social/modules/presentation/personal_details/view/personal_details.dart';
 import 'package:esusu_social/modules/presentation/privacy_and_security/view/privacy_and_security.dart';
+import 'package:esusu_social/modules/presentation/settings/view/settings_page.dart';
 import 'package:esusu_social/modules/presentation/terms_and_conditions/view/terms_and_conditions.dart';
 import 'package:esusu_social/modules/presentation/upgrade_account/view/upgrade_account_page.dart';
 import 'package:esusu_social/theme/colors.dart';
@@ -49,46 +47,46 @@ class _AccountPageState extends State<AccountPage> {
                     text: "Personal Details",
                     onPressed: () => Get.to(PersonalDetailsPage()),
                   ),
-                  Container(
-                    margin: EdgeInsets.only(bottom: 20.0),
-                    height: 50.0,
-                    width: width - 40.0,
-                    padding: EdgeInsets.only(left: 20.0, right: 10.0),
-                    decoration: BoxDecoration(
-                      color: isDarkModeON ? kPrimaryColor : kTextColor3,
-                      borderRadius: BorderRadius.circular(12.0),
-                      boxShadow: [
-                        BoxShadow(
-                            color: kShadowColor.withOpacity(0.2),
-                            offset: Offset(0, 0),
-                            blurRadius: 3.0),
-                      ],
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Dark Mode",
-                          style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                color: isDarkModeON ? kTextColor3 : kTextColor1,
-                                fontSize: 16.0),
-                          ),
-                        ),
-                        Switch(
-                            value: isDarkModeON,
-                            activeColor: Colors.lightBlue,
-                            activeTrackColor: kTextColor1.withOpacity(0.5),
-                            onChanged: (val) {
-                              setState(() {
-                                isDarkModeON = val;
-                                _bottombarController.update();
-                              });
-                            })
-                      ],
-                    ),
-                  ),
+                  // Container(
+                  //   margin: EdgeInsets.only(bottom: 20.0),
+                  //   height: 50.0,
+                  //   width: width - 40.0,
+                  //   padding: EdgeInsets.only(left: 20.0, right: 10.0),
+                  //   decoration: BoxDecoration(
+                  //     color: isDarkModeON ? kPrimaryColor : kTextColor3,
+                  //     borderRadius: BorderRadius.circular(12.0),
+                  //     boxShadow: [
+                  //       BoxShadow(
+                  //           color: kShadowColor.withOpacity(0.2),
+                  //           offset: Offset(0, 0),
+                  //           blurRadius: 3.0),
+                  //     ],
+                  //   ),
+                  //   child: Row(
+                  //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //     children: [
+                  //       Text(
+                  //         "Dark Mode",
+                  //         style: GoogleFonts.poppins(
+                  //           textStyle: TextStyle(
+                  //               fontWeight: FontWeight.w600,
+                  //               color: isDarkModeON ? kTextColor3 : kTextColor1,
+                  //               fontSize: 16.0),
+                  //         ),
+                  //       ),
+                  //       Switch(
+                  //           value: isDarkModeON,
+                  //           activeColor: Colors.lightBlue,
+                  //           activeTrackColor: kTextColor1.withOpacity(0.5),
+                  //           onChanged: (val) {
+                  //             setState(() {
+                  //               isDarkModeON = val;
+                  //               _bottombarController.update();
+                  //             });
+                  //           })
+                  //     ],
+                  //   ),
+                  // ),
                   AccButton(
                     text: "Upgrade Account",
                     onPressed: () => Get.to(UpgradeAccountPage()),
@@ -98,8 +96,8 @@ class _AccountPageState extends State<AccountPage> {
                     onPressed: () => Get.to(BankDetailsPage()),
                   ),
                   AccButton(
-                    text: "Notifications",
-                    onPressed: () => Get.to(NotificationsPage()),
+                    text: "Settings",
+                    onPressed: () => Get.to(SettingsPage()),
                   ),
                   AccButton(
                     text: "Privacy & Security",
