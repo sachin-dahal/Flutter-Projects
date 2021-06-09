@@ -17,6 +17,7 @@ class HomepageController extends GetxController {
     Container(
       height: Get.height * 0.18,
       width: Get.width * 0.88,
+      margin: EdgeInsets.only(right: 10.0),
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 5.0),
       decoration: BoxDecoration(
         color: kTextColor3,

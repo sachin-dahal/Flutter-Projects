@@ -30,22 +30,24 @@ class AddWalletPage extends StatelessWidget {
                     shrinkWrap: true,
                     physics: BouncingScrollPhysics(),
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          WalletTransferButton(
-                            text: "Bank Transfer",
-                            isSelected: _addWalletController.isBankSelected,
-                            onPressed: () =>
-                                _addWalletController.toggleBankUssd(true),
-                          ),
-                          SizedBox(width: 30.0),
-                          WalletTransferButton(
-                            text: "USSD",
-                            isSelected: !_addWalletController.isBankSelected,
-                            onPressed: _addWalletController.toggleBankUssd,
-                          ),
-                        ],
+                      Container(
+                        padding: EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            WalletTransferButton(
+                              text: "Bank Transfer",
+                              isSelected: _addWalletController.isBankSelected,
+                              onPressed: () =>
+                                  _addWalletController.toggleBankUssd(true),
+                            ),
+                            WalletTransferButton(
+                              text: "USSD",
+                              isSelected: !_addWalletController.isBankSelected,
+                              onPressed: _addWalletController.toggleBankUssd,
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(height: 50.0),
                       _addWalletController.isBankSelected

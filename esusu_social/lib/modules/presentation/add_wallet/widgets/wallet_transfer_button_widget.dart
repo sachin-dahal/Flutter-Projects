@@ -19,11 +19,11 @@ class WalletTransferButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        height: 70.0,
-        width: Get.width * 0.4,
+        height: 50.0,
+        width: Get.width * 0.40,
         decoration: BoxDecoration(
           color: isSelected ? kPrimaryColor : kTextColor3,
-          borderRadius: BorderRadius.circular(15.0),
+          borderRadius: BorderRadius.circular(8.0),
           boxShadow: [
             BoxShadow(
                 color: kShadowColor.withOpacity(0.2),
@@ -38,7 +38,7 @@ class WalletTransferButton extends StatelessWidget {
             textAlign: TextAlign.center,
             style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                    fontSize: 17.0,
+                    fontSize: 14.0,
                     fontWeight: FontWeight.w600,
                     color: isSelected ? kTextColor3 : kTextColor1)),
           ),

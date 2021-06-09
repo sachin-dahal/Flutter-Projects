@@ -17,13 +17,10 @@ class Homepage extends StatelessWidget {
 
   final HomepageController _homepageController = Get.put(HomepageController());
 
-  final PageController pageController = PageController(
-    initialPage: 0,
-    keepPage: true,
-  );
-
   @override
   Widget build(BuildContext context) {
+    final PageController pageController =
+        PageController(initialPage: 0, keepPage: true, viewportFraction: 1);
     return Scaffold(
       backgroundColor: isDarkModeON ? kDarkBackgroundColor : kBackgroundColor1,
       body: SingleChildScrollView(
@@ -99,17 +96,18 @@ class Homepage extends StatelessWidget {
                                     : height * 0.175,
                                 width: width * 0.88,
                                 padding: EdgeInsets.only(
-                                    left: 5.0,
-                                    right: 5.0,
+                                    // left: 5.0,
+                                    // right: 5.0,
                                     bottom: Get.height > 700.0 ? 10.0 : 0.0),
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: kShadowColor.withOpacity(0.2),
-                                          offset: Offset(0, 0),
-                                          blurRadius: 3.0),
-                                    ]),
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  // boxShadow: [
+                                  //   BoxShadow(
+                                  //       color: kShadowColor.withOpacity(0.1),
+                                  //       offset: Offset(-5, 0),
+                                  //       blurRadius: 1.0),
+                                  // ],
+                                ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.min,
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -284,13 +282,13 @@ class Homepage extends StatelessWidget {
             ),
             LabelCardWidget(
               imgUrl: "images/esusu_central.png",
-              text: "eSuSuCentral",
+              text: "eSuSu Central",
               color: Color(0xFF518EF8),
               onPressed: () {},
             ),
             LabelCardWidget(
               imgUrl: "images/buyNowPayLater.png",
-              text: "BuyNowPayLater",
+              text: "BuyNow PayLater",
               fontSize: 11.0,
               color: Color(0xFFC536A4),
               onPressed: () {},

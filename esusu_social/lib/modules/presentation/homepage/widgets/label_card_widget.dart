@@ -13,7 +13,7 @@ class LabelCardWidget extends StatelessWidget {
     @required this.text,
     @required this.color,
     @required this.onPressed,
-    this.fontSize = 12.0,
+    this.fontSize = 11.0,
   });
 
   @override
@@ -31,7 +31,7 @@ class LabelCardWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                height: 35.0,
+                height: 30.0,
                 child: Image(
                   image: AssetImage(imgUrl),
                   fit: BoxFit.cover,

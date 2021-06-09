@@ -1,4 +1,3 @@
-import 'package:esusu_social/modules/presentation/bottom_bar/view/bottom_bar_page.dart';
 import 'package:esusu_social/modules/presentation/login/view/login_page.dart';
 import 'package:esusu_social/theme/colors.dart';
 import 'package:flutter/material.dart';
