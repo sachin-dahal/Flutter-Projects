@@ -1,16 +1,16 @@
-# check_stack
+# Check Stack
 
-A new Flutter project.
+A new Flutter project about the Check Stack application UI.
 
-## Getting Started
+## Screenshots
 
-This project is a starting point for a Flutter application.
+<div align="center">
+<img src="https://raw.githubusercontent.com/sachin-dahal/Flutter-UI/master/check_stack/ss/checkStack_1.jpg"  height="500" alt="Checkstack SS">****
+  <img src="https://raw.githubusercontent.com/sachin-dahal/Flutter-UI/master/check_stack/ss/checkStack_2.jpg"  height="500" alt="Checkstack SS">****
+  <img src="https://raw.githubusercontent.com/sachin-dahal/Flutter-UI/master/check_stack/ss/checkStack_3.jpg"  height="500" alt="Checkstack SS">****
+  <img src="https://raw.githubusercontent.com/sachin-dahal/Flutter-UI/master/check_stack/ss/checkStack_4.jpg"  height="500" alt="Checkstack SS">****
+  <img src="https://raw.githubusercontent.com/sachin-dahal/Flutter-UI/master/check_stack/ss/checkStack_5.jpg"  height="500" alt="Checkstack SS">****
+  <img src="https://raw.githubusercontent.com/sachin-dahal/Flutter-UI/master/check_stack/ss/checkStack_6.jpg"  height="500" alt="Checkstack SS">****
+  <img src="https://raw.githubusercontent.com/sachin-dahal/Flutter-UI/master/check_stack/ss/checkStack_7.jpg"  height="500" alt="Checkstack SS">****
+</div>
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
