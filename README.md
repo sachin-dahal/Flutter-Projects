@@ -16,3 +16,4 @@
  ```
  $ git clone https://github.com/sachin-dahal/Flutter-UI
  ```
+**Don't forget to run** ` $ flutter pub get` **in each sub directories after cloning**
